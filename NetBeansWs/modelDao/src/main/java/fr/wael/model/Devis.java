@@ -42,7 +42,7 @@ public class Devis
 	 
 	@javax.persistence.ManyToOne 
 	@javax.persistence.JoinColumn(nullable = false) 
-	protected Demande demande;
+	private Piece piece;
 
 	/**
 	 * <!-- begin-user-doc -->

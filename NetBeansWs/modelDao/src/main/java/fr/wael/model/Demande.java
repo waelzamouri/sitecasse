@@ -1,7 +1,7 @@
 package fr.wael.model;
 
 import java.util.Set;
-import java.util.HashSet;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -44,8 +44,7 @@ public class Demande {
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
-    @javax.persistence.OneToMany(mappedBy = "demande")
-    protected Set<Devis> devis;
+    
 
     /**
      * <!-- begin-user-doc -->
