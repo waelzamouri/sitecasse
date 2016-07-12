@@ -19,9 +19,9 @@ public class Casse
 	 * @generated
 	 * @ordered
 	 */
-	 
+	@javax.persistence.Id  
 	@javax.persistence.Column(nullable = false) 
-	protected long id_casse;
+	private long id_casse;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class Casse
 	 */
 	 
 	@javax.persistence.ManyToMany(mappedBy = "casse") 
-	protected Set<Demande> demande;
+	private Set<Demande> demande;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -41,17 +41,16 @@ public class Casse
 	 */
 	 
 	@javax.persistence.OneToMany(mappedBy = "casse") 
-	protected Set<Avis> avis;
+	private Set<Avis> avis;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	@javax.persistence.Id 
-	@javax.persistence.Column(nullable = false) 
-	protected final Long id = 0L;
+	
+        @javax.persistence.Column(nullable = true)
+        private String nom;
+        
+        @javax.persistence.Column(nullable = true)
+        private String adresse;
+        
+        
 
 	/**
 	 * <!-- begin-user-doc -->
