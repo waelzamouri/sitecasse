@@ -30,16 +30,11 @@ public class Casse
 	 * @ordered
 	 */
 	 
-	@javax.persistence.ManyToMany(mappedBy = "casse") 
-	private Set<Demande> demande;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	 
+         
+	@javax.persistence.OneToMany(mappedBy = "casse") 
+	protected Set<Devis> devis;
+        
 	@javax.persistence.OneToMany(mappedBy = "casse") 
 	private Set<Avis> avis;
 
