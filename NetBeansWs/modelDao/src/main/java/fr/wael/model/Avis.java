@@ -88,4 +88,21 @@ public class Avis {
         this.commentaire = commentaire;
     }
 
+    public long getNb_etoile() {
+        return nb_etoile;
+    }
+
+    public void setNb_etoile(long nb_etoile) {
+        this.nb_etoile = nb_etoile;
+    }
+
+    public Date getDate_com() {
+        return date_com;
+    }
+
+    public void setDate_com(Date date_com) {
+        this.date_com = date_com;
+    }
+    
+
 }
