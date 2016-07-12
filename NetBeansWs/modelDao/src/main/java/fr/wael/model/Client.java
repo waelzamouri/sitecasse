@@ -21,7 +21,20 @@ public class Client
 	 */
 	 
 	@javax.persistence.Column(nullable = false) 
-	protected long id_client;
+	private long id_client;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	@javax.persistence.Column(nullable = false)
+        private String username;
+        
+        
+	@javax.persistence.OneToMany(mappedBy = "client") 
+	private Set<Demande> demande;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,27 +44,9 @@ public class Client
 	 */
 	 
 	@javax.persistence.OneToMany(mappedBy = "client") 
-	protected Set<Demande> demande;
+	private Set<Avis> avis;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	 
-	@javax.persistence.OneToMany(mappedBy = "client") 
-	protected Set<Avis> avis;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	@javax.persistence.Id 
-	@javax.persistence.Column(nullable = false) 
-	protected final Long id = 0L;
 
 	/**
 	 * <!-- begin-user-doc -->
