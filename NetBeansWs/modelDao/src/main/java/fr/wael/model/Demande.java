@@ -16,7 +16,7 @@ public class Demande {
      */
     @javax.persistence.Id
     @javax.persistence.Column(nullable = false)
-    protected long id_demande;
+    private long id_demande;
 
     /**
      * <!-- begin-user-doc -->
@@ -24,21 +24,21 @@ public class Demande {
      */
     @javax.persistence.ManyToOne
     @javax.persistence.JoinColumn(nullable = false)
-    protected Client client;
+    private Client client;
 
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
     @javax.persistence.ManyToMany
-    protected Set<Casse> casse;
+    private Set<Casse> casse;
 
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
     @javax.persistence.OneToMany(mappedBy = "demande")
-    protected Set<Piece> piece;
+    private Set<Piece> piece;
 
     /**
      * <!-- begin-user-doc -->
@@ -54,4 +54,37 @@ public class Demande {
         super();
     }
 
+    public long getId_demande() {
+        return id_demande;
+    }
+
+    public void setId_demande(long id_demande) {
+        this.id_demande = id_demande;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Set<Casse> getCasse() {
+        return casse;
+    }
+
+    public void setCasse(Set<Casse> casse) {
+        this.casse = casse;
+    }
+
+    public Set<Piece> getPiece() {
+        return piece;
+    }
+
+    public void setPiece(Set<Piece> piece) {
+        this.piece = piece;
+    }
+
+    
 }
