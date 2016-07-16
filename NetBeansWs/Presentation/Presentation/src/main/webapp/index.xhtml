@@ -1,157 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Bootstrap Example</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
 
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <!--                    <code><h3>Casse compare</h3></code>-->
-                    <center><img class="img-rsponsive" src="resouces/images/engrenage.png" style="width: 150px;height: 125px"/></center>
-                </div>
-                <div class="col-md-6">
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-                    <h3><span class="label label-danger">  Comparateur de pieces détachés pour auto   </span></h3>
-                    <a href="#" style="margin-left: 10px"><span class="glyphicon glyphicon-info-sign"></span>   Jusqu'à <span class="badge">5</span> devis pour votre pièce</a>
-                    <div class="col-md-1">
-                       
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    
-                    <center><button type="button" class="btn btn-info" style="padding: 10px 18px;font-size: 18px; position: relative;
-                                    "><span class="glyphicon glyphicon-user"></span>  Connexion   </button></center>
-                                    <center> <a href="#">Ouvrir un compte  ? </a></center>
-                </div>
-            </div>
-
-        </div>
-    </nav>
-
-</head>
-<body>
-    <div class="container">
-        <div class="well">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="jumbotron">
-                        <blockquote>
-                            <h2><kbd>Comment ça marche ?</kbd></h2> 
-                            <p class="bg-info"><span class="glyphicon glyphicon-search"></span>    Je trouve ma pièce auto.</p>
-                            <p class="bg-warning"><span class="glyphicon glyphicon-ok"></span>    Je lance la recherche</p>
-                            <p class="bg-success"><span class="glyphicon glyphicon-wrench"></span>    Les casses au alentour me renvois des devis</p>
-                            <p class="bg-danger"><span class="glyphicon glyphicon-send"></span>    Je choisis le devis qui me convient</p>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <form class="form-horizontal" role="form">
-                        <div class="jumbotron">
-                            <div class="form-group">
-                                <label for="sel1">Marque</label>
-                                <select class="form-control" id="sel1">
-                                    <option>Peugeot</option>
-                                    <option>Renault</option>
-                                    <option>Mercedes</option>
-                                    <option>Wolswagen</option>
-                                </select>
+    <ui:composition template="resouces/template/layout/commun/layout.xhtml">
+        <ui:define name="content">
+            <h:body>
+                <div class="container">
+                    <div class="well">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="jumbotron">
+                                    <blockquote>
+                                        <h2><kbd>Comment ça marche ?</kbd></h2> 
+                                        <p class="bg-info"><span class="glyphicon glyphicon-search"></span>    Je trouve ma pièce auto.</p>
+                                        <p class="bg-warning"><span class="glyphicon glyphicon-ok"></span>    Je lance la recherche</p>
+                                        <p class="bg-success"><span class="glyphicon glyphicon-wrench"></span>    Les casses au alentour me renvois des devis</p>
+                                        <p class="bg-danger"><span class="glyphicon glyphicon-send"></span>    Je choisis le devis qui me convient</p>
+                                    </blockquote>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="sel1">Modèle</label>
-                                <select class="form-control" id="sel1">
-                                    <option>Clio</option>
-                                    <option>Saphir</option>
-                                    <option>espace</option>
-                                    <option>laguna</option>
-                                </select>
+                            <div class="col-md-4">
+                                <ui:insert name="module-recherche" >
+                                    <ui:include src="resouces/template/fragment/commun/composants/module-recherche.xhtml" />
+                                </ui:insert>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Pièce</label>
-                                <input type="email" class="form-control" id="email" placeholder="Exemple : Alternateur" />
-                            </div>
-                            <center>
-                                <button type="submit" class="btn btn-danger">Trouver  <span class="glyphicon glyphicon glyphicon-eye-open"></span></button></center>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="well">
+                <div class="container">
+                    <div class="well">
 
-            <div class="row">
+                        <div class="row">
 
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/logo-renault.png" class="img-rsponsive" alt="Cinque Terre"  style="max-height: 150px;max-width: 150;padding: 20px;"/></center>
-                    
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/logo-renault.png" class="img-rsponsive" alt="Cinque Terre"  style="max-height: 150px;max-width: 150;padding: 20px;"/></center>
+
+                            </div>
+
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/logo-peugeot.png" class="img-rsponsive" alt="Cinque Terre"  style="max-height: 150px;max-width: 150px;padding: 20px;"/></center> 
+
+                            </div>
+
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center> <img src="resouces/images/logo-opel.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
+
+                            </div>
+                            <div class="clearfix visible-xs-block"></div>
+
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/wolswagen.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
+
+                            </div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/mercedes-logo.png" class="img-rsponsive" alt="Cinque Terre"  style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
+
+                            </div>
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/BMW_logo.png" class="img-rsponsive" alt="Cinque Terre"  style="max-height: 150px;max-width: 150px;padding: 20px;"/></center> 
+
+                            </div>
+                            <div class="clearfix visible-xs-block"></div>
+                            <div class="clearfix visible-md-block"></div>
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center> <img src="resouces/images/citroen-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
+
+                            </div>
+
+
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/nissan-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
+
+                            </div>   
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/logo-ford.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
+
+                            </div>
+                            <div class="clearfix visible-xs-block"></div>
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/audi-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
+
+                            </div> 
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/alpha-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
+
+                            </div> 
+                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                <center><img src="resouces/images/seat-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
+
+                            </div> 
+
+                        </div>
+
+
+
+
+
+                    </div>
                 </div>
 
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/logo-peugeot.png" class="img-rsponsive" alt="Cinque Terre"  style="max-height: 150px;max-width: 150px;padding: 20px;"/></center> 
-                    
-                </div>
-
-                <div class="col-md-2 col-sm-2">
-                    <center> <img src="resouces/images/logo-opel.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
-                    
-                </div>
-
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/wolswagen.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
-                   
-                </div>
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/mercedes-logo.png" class="img-rsponsive" alt="Cinque Terre"  style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
-                    
-                </div>
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/BMW_logo.png" class="img-rsponsive" alt="Cinque Terre"  style="max-height: 150px;max-width: 150px;padding: 20px;"/></center> 
-                    
-                </div>
 
 
-            </div>
-            <div class="row">
+            </h:body>
 
-                <div class="col-md-2 col-sm-2">
-                    <center> <img src="resouces/images/citroen-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
-                   
-                </div>
-
-
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/nissan-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
-                    
-                </div>   
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/logo-ford.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
-                    
-                </div>
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/audi-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
-                    
-                </div> 
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/alpha-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
-                    
-                </div> 
-                <div class="col-md-2 col-sm-2">
-                    <center><img src="resouces/images/seat-logo.png" class="img-rsponsive" alt="Cinque Terre" style="max-height: 150px;max-width: 150px;padding: 20px;"/></center>
-                   
-                </div> 
-            </div>
-
-        </div>
-    </div>
-
-
-
-</body>
+        </ui:define>
+    </ui:composition>
 </html>
