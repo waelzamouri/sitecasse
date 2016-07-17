@@ -9,7 +9,7 @@
         <ui:define name="content">
             <h:body>
                 <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
-                
+                <script type="text/javascript" src="resources/js/style.js" ></script>
                 <div class="container">
                     <div class="well">
                         <div class="row">
@@ -32,9 +32,12 @@
                     </ui:insert>
                 </div>
 
-
+                <ui:insert name="module-scroll-top" >
+                    <ui:include src="resources/template/fragment/commun/composants/module-scroll-top.xhtml" />
+                </ui:insert>
 
             </h:body>
+
 
         </ui:define>
     </ui:composition>
