@@ -17,16 +17,17 @@
                 <div class="container">
                     <div class="well">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 <ui:insert name="module-com-ca-marche" >
                                     <ui:include src="resources/template/fragment/commun/composants/module-com-ca-marche.xhtml" />
                                 </ui:insert>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                                 <ui:insert name="module-recherche" >
                                     <ui:include src="resources/template/fragment/commun/composants/module-recherche.xhtml" />
                                 </ui:insert>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -40,22 +41,9 @@
                     <ui:include src="resources/template/fragment/commun/composants/module-scroll-top.xhtml" />
                 </ui:insert>
                 <div class="container">
-                    <div class="well">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="box">
-                                    <div class="box-icon" >
-                                        <center> <img src="resources/images/voiture-cartoon.png"  class="img-rounded" /></center>
-                                    </div>
-                                    <div class="info">
-                                        <h4 class="text-center">Nos casses</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
-                                        <center><a href="" class="btn3d btn btn-info">En savoir plus  <span class="glyphicon glyphicon-plus"></span></a></center>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ui:insert name="module-nos-casses" >
+                        <ui:include src="resources/template/fragment/commun/composants/module-nos-casses.xhtml" />
+                    </ui:insert>
                 </div>
 
 
