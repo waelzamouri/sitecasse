@@ -9,11 +9,12 @@
         <ui:define name="content">
             <h:body style="background: url(resources/images/ciel.jpg)">
                 <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
-                <script type="text/javascript" src="resources/js/style.js" ></script>
+                
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/journal/bootstrap.min.css" />
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
                 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
                 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous" />
+                <script type="text/javascript" src="resources/js/style.js" ></script>
                 <div class="container">
                     <div class="well">
                         <div class="row">
@@ -27,7 +28,7 @@
                                     <ui:include src="resources/template/fragment/commun/composants/module-recherche.xhtml" />
                                 </ui:insert>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -37,16 +38,16 @@
                     </ui:insert>
                 </div>
 
-                <ui:insert name="module-scroll-top" >
-                    <ui:include src="resources/template/fragment/commun/composants/module-scroll-top.xhtml" />
-                </ui:insert>
+
                 <div class="container">
                     <ui:insert name="module-nos-casses" >
                         <ui:include src="resources/template/fragment/commun/composants/module-nos-casses.xhtml" />
                     </ui:insert>
                 </div>
 
-
+                <ui:insert name="module-scroll-top" >
+                    <ui:include src="resources/template/fragment/commun/composants/module-scroll-top.xhtml" />
+                </ui:insert>
 
 
 
