@@ -18,7 +18,7 @@ public class Devis {
     @javax.persistence.Id
     @javax.persistence.Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected long id_devis;
+    private long id_devis;
 
     /**
      * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ public class Devis {
      */
     @javax.persistence.ManyToOne
     @javax.persistence.JoinColumn(nullable = false)
-    protected Casse casse;
+    private Casse casse;
 
     /**
      * <!-- begin-user-doc -->
@@ -36,6 +36,27 @@ public class Devis {
     @javax.persistence.JoinColumn(nullable = false)
     private Piece piece;
 
+    
+    public long getId_devis() {
+        return id_devis;
+    }
+
+    public void setId_devis(long id_devis) {
+        this.id_devis = id_devis;
+    }
+
+    public Casse getCasse() {
+        return casse;
+    }
+
+    public void setCasse(Casse casse) {
+        this.casse = casse;
+    }
+
+    public Piece getPiece() {
+        return piece;
+    }
+
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
@@ -44,6 +65,10 @@ public class Devis {
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated
      */
+    public void setPiece(Piece piece) {    
+        this.piece = piece;
+    }
+
     public Devis() {
         super();
     }
