@@ -1,7 +1,8 @@
 package fr.wael.model;
 
-import java.util.Set;
-
+import java.util.List;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +17,7 @@ public class Demande {
      */
     @javax.persistence.Id
     @javax.persistence.Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id_demande;
 
     /**
@@ -31,21 +33,19 @@ public class Demande {
      * <!--  end-user-doc  --> @generated @ordered
      */
     @javax.persistence.ManyToMany
-    private Set<Casse> casse;
+    private List<Casse> casse;
 
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
     @javax.persistence.OneToMany(mappedBy = "demande")
-    private Set<Piece> piece;
+    private List<Piece> piece;
 
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
-    
-
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated
@@ -70,21 +70,20 @@ public class Demande {
         this.client = client;
     }
 
-    public Set<Casse> getCasse() {
+    public List<Casse> getCasse() {
         return casse;
     }
 
-    public void setCasse(Set<Casse> casse) {
+    public void setCasse(List<Casse> casse) {
         this.casse = casse;
     }
 
-    public Set<Piece> getPiece() {
+    public List<Piece> getPiece() {
         return piece;
     }
 
-    public void setPiece(Set<Piece> piece) {
+    public void setPiece(List<Piece> piece) {
         this.piece = piece;
     }
 
-    
 }

@@ -1,6 +1,8 @@
 package fr.wael.model;
 
-import java.util.Set;
+import java.util.List;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +17,7 @@ public class Client {
      */
     @javax.persistence.Id
     @javax.persistence.Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id_client;
 
     @javax.persistence.Column(nullable = false)
@@ -36,14 +39,14 @@ public class Client {
     private String psw;
 
     @javax.persistence.OneToMany(mappedBy = "client")
-    private Set<Demande> demandes;
+    private List<Demande> demandes;
 
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
     @javax.persistence.OneToMany(mappedBy = "client")
-    private Set<Avis> avis;
+    private List<Avis> avis;
 
     /**
      * <!-- begin-user-doc -->
@@ -101,19 +104,19 @@ public class Client {
         this.psw = psw;
     }
 
-    public Set<Demande> getDemandes() {
+    public List<Demande> getDemandes() {
         return demandes;
     }
 
-    public void setDemandes(Set<Demande> demandes) {
+    public void setDemandes(List<Demande> demandes) {
         this.demandes = demandes;
     }
 
-    public Set<Avis> getAvis() {
+    public List<Avis> getAvis() {
         return avis;
     }
 
-    public void setAvis(Set<Avis> avis) {
+    public void setAvis(List<Avis> avis) {
         this.avis = avis;
     }
 

@@ -1,6 +1,7 @@
 package fr.wael.model;
 
 import java.util.Date;
+import javax.persistence.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +16,7 @@ public class Avis {
      */
     @javax.persistence.Id
     @javax.persistence.Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id_avis;
 
     /**
@@ -35,8 +37,8 @@ public class Avis {
 
     /**
      * <!-- begin-user-doc -->
-     * <!--  end-user-doc  --> @gene<!--rated
-	 * @ord
+     * <!--  end-user-doc  --> @gene<!--rated @ord
+     *
      * ered
      */
     @javax.persistence.Column(nullable = false)
@@ -103,6 +105,5 @@ public class Avis {
     public void setDate_com(Date date_com) {
         this.date_com = date_com;
     }
-    
 
 }

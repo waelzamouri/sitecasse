@@ -1,6 +1,8 @@
 package fr.wael.model;
 
-import java.util.Set;
+import java.util.List;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +17,7 @@ public class Piece {
      */
     @javax.persistence.Id
     @javax.persistence.Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id_piece;
 
     /**
@@ -30,27 +33,27 @@ public class Piece {
      * <!--  end-user-doc  --> @generated @ordered
      */
     @javax.persistence.OneToMany(mappedBy = "piece")
-    private Set<Devis> devis;
+    private List<Devis> devis;
 
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated
      */
     @javax.persistence.Column(nullable = false)
-    private String marque; 
-    
+    private String marque;
+
     @javax.persistence.Column(nullable = false)
     private String model;
-    
+
     @javax.persistence.Column(nullable = false)
     private String zone;
-    
+
     @javax.persistence.Column(nullable = false)
     private String nom_piece;
-    
+
     @javax.persistence.Column(nullable = true)
     private String com_client;
-    
+
     public Piece() {
         super();
     }
@@ -71,11 +74,11 @@ public class Piece {
         this.demande = demande;
     }
 
-    public Set<Devis> getDevis() {
+    public List<Devis> getDevis() {
         return devis;
     }
 
-    public void setDevis(Set<Devis> devis) {
+    public void setDevis(List<Devis> devis) {
         this.devis = devis;
     }
 
