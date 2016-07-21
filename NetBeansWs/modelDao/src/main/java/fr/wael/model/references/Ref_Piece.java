@@ -23,7 +23,7 @@ public class Ref_Piece implements Serializable{
     @javax.persistence.Column(nullable = false)
     private Long id_ref_piece;
 
-    @Column
+    @Column(nullable = true)
     private String nom_piece;
 
     @ManyToOne

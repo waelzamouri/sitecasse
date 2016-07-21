@@ -4,33 +4,34 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <session-factory>
-            <property name="hibernate.dialect">
-                org.hibernate.dialect.MySQLDialect
-            </property>
-            <property name="hibernate.connection.driver_class">
-                com.mysql.jdbc.Driver
-            </property>
+        
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
 
-            <!-- Assume students is the database name -->
-            <property name="hibernate.connection.url">
-                jdbc:mysql://localhost:3306/compare_casse
-            </property>
-            <property name="hibernate.connection.username">
-                root
-            </property>
-            <property name="hibernate.connection.password">
-            </property>
-            <mapping class="fr.wael.model.Avis" />
-            <mapping class="fr.wael.model.Casse" />
-            <mapping class="fr.wael.model.Client" />
-            <mapping class="fr.wael.model.Demande" />
-            <mapping class="fr.wael.model.Devis" />
-            <mapping class="fr.wael.model.Piece" />
-            <mapping class="fr.wael.model.references.Ref_List_Modele" />
-            <mapping class="fr.wael.model.references.Ref_Marque" />
-            <mapping class="fr.wael.model.references.Ref_Modele" />
-            <mapping class="fr.wael.model.references.Ref_Piece" />
-            <mapping class="fr.wael.model.references.Ref_Zone" />
-        </session-factory>
+        <!-- Assume students is the database name -->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/compare_casse
+        </property>
+        <property name="hibernate.connection.username">
+            root
+        </property>
+        <property name="hibernate.connection.password">
+        </property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <mapping class="fr.wael.model.Avis" />
+        <mapping class="fr.wael.model.Casse" />
+        <mapping class="fr.wael.model.Client" />
+        <mapping class="fr.wael.model.Demande" />
+        <mapping class="fr.wael.model.Devis" />
+        <mapping class="fr.wael.model.Piece" />
+        <mapping class="fr.wael.model.references.Ref_List_Modele" />
+        <mapping class="fr.wael.model.references.Ref_Marque" />
+        <mapping class="fr.wael.model.references.Ref_Modele" />
+        <mapping class="fr.wael.model.references.Ref_Piece" />
+        <mapping class="fr.wael.model.references.Ref_Zone" />
+    </session-factory>
 </hibernate-configuration>
