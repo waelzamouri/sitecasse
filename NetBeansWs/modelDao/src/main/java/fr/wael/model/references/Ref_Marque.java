@@ -29,7 +29,7 @@ public class Ref_Marque implements Serializable{
     private String nom_marque;
 
     @OneToMany(mappedBy = "ref_marque")
-    private List<Ref_Modele> modeles;
+    private List<Ref_Modele> ref_modele;
 
     public String getNom_marque() {
         return nom_marque;
@@ -39,12 +39,12 @@ public class Ref_Marque implements Serializable{
         this.nom_marque = nom_marque;
     }
 
-    public List<Ref_Modele> getModeles() {
-        return modeles;
+    public List<Ref_Modele> getModele() {
+        return ref_modele;
     }
 
-    public void setModeles(List<Ref_Modele> modeles) {
-        this.modeles = modeles;
+    public void setModele(List<Ref_Modele> modeles) {
+        this.ref_modele = modeles;
     }
 
     public Long getId_ref_marque() {

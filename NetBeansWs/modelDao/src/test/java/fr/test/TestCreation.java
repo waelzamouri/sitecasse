@@ -5,8 +5,13 @@
  */
 package fr.test;
 
+import fr.wael.model.Avis;
+import fr.wael.model.Client;
 import fr.wael.model.references.Ref_Piece;
 import fr.wael.util.HibernateUtil;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -25,9 +30,25 @@ public class TestCreation {
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            Ref_Piece ref_Piece = new Ref_Piece();
-            ref_Piece.setNom_piece("Alternateur");
-            session.save(ref_Piece);
+//            Client client = new Client();
+//            client.setMail("koikoi@gmai.com");
+//            client.setNom("wael");
+//            client.setNumero("0677927774");
+//            client.setPsw("xxx1983748");
+//            Avis avis = new Avis();
+//            avis.setDate_com(new Date());
+//            avis.setNb_etoile(5L);
+//            avis.setCommentaire("Hello premier test");
+//            List<Avis> listAvis = new ArrayList<>();
+//            listAvis.add(avis);
+//            client.setAvis(listAvis);
+//            session.save(client);
+//            avis.setClient(client);
+//            session.save(avis);
+            Client c = (Client) session.get(Client.class, 1L);
+            List<Avis> listAvis = new ArrayList<>();
+            listAvis = c.getAvis();
+            System.out.println("nb etoiles : " + listAvis.get(0).getNb_etoile());
             tx.commit();
 
         } catch (HibernateException e) {

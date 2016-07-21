@@ -12,6 +12,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.TemporalType;
@@ -29,6 +30,7 @@ public class Ref_Modele implements Serializable{
     private Long id_ref_modele;
 
     @ManyToOne
+    @JoinColumn(name = "ref_modele")
     private Ref_Marque ref_Marque;
 
     @Column(nullable = true)

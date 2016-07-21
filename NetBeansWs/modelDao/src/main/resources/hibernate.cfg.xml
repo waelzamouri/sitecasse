@@ -21,17 +21,17 @@
         </property>
         <property name="hibernate.connection.password">
         </property>
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="fr.wael.model.Avis" />
         <mapping class="fr.wael.model.Casse" />
         <mapping class="fr.wael.model.Client" />
         <mapping class="fr.wael.model.Demande" />
         <mapping class="fr.wael.model.Devis" />
         <mapping class="fr.wael.model.Piece" />
-        <mapping class="fr.wael.model.references.Ref_List_Modele" />
+<!--        <mapping class="fr.wael.model.references.Ref_List_Modele" />
         <mapping class="fr.wael.model.references.Ref_Marque" />
         <mapping class="fr.wael.model.references.Ref_Modele" />
         <mapping class="fr.wael.model.references.Ref_Piece" />
-        <mapping class="fr.wael.model.references.Ref_Zone" />
+        <mapping class="fr.wael.model.references.Ref_Zone" />-->
     </session-factory>
 </hibernate-configuration>

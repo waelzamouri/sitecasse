@@ -25,7 +25,7 @@ public class Avis implements Serializable{
      * <!--  end-user-doc  --> @generated @ordered
      */
     @javax.persistence.ManyToOne
-    @javax.persistence.JoinColumn(nullable = false)
+    @javax.persistence.JoinColumn(nullable = true)
     private Client client;
 
     /**
@@ -33,7 +33,7 @@ public class Avis implements Serializable{
      * <!--  end-user-doc  --> @generated @ordered
      */
     @javax.persistence.ManyToOne
-    @javax.persistence.JoinColumn(nullable = false)
+    @javax.persistence.JoinColumn(nullable = true)
     private Casse casse;
 
     /**
@@ -42,13 +42,14 @@ public class Avis implements Serializable{
      *
      * ered
      */
-    @javax.persistence.Column(nullable = false)
+    @javax.persistence.Column(nullable = true)
     private long nb_etoile;
 
     @javax.persistence.Column(nullable = false)
     private String commentaire;
 
     @javax.persistence.Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date_com;
 
     /**

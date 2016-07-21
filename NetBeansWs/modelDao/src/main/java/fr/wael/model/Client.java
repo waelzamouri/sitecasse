@@ -21,22 +21,22 @@ public class Client implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id_client;
 
-    @javax.persistence.Column(nullable = false)
+    @javax.persistence.Column(nullable = true)
     private String nom;
 
     @javax.persistence.Column(nullable = true)
     private String prenom;
 
-    @javax.persistence.Column(nullable = false)
+    @javax.persistence.Column(nullable = true)
     private String numero;
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
-    @javax.persistence.Column(nullable = false)
+    @javax.persistence.Column(nullable = true)
     private String mail;
 
-    @javax.persistence.Column(nullable = false)
+    @javax.persistence.Column(nullable = true)
     private String psw;
 
     @javax.persistence.OneToMany(mappedBy = "client")
