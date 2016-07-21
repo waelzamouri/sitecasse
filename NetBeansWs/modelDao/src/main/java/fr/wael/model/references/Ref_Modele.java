@@ -5,6 +5,7 @@
  */
 package fr.wael.model.references;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -20,7 +21,7 @@ import javax.persistence.TemporalType;
  * @author wael
  */
 @javax.persistence.Entity
-public class Ref_Modele {
+public class Ref_Modele implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -5,6 +5,7 @@
  */
 package fr.wael.model.references;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ import javax.persistence.OneToMany;
  * @author wael
  */
 @javax.persistence.Entity
-public class Ref_Marque {
+public class Ref_Marque implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
