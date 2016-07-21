@@ -1,5 +1,6 @@
 package fr.wael.model;
 
+import java.io.Serializable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -8,7 +9,7 @@ import javax.persistence.GenerationType;
  * <!--  end-user-doc  --> @generated
  */
 @javax.persistence.Entity
-public class Devis {
+public class Devis implements Serializable {
 
     /**
      * <!-- begin-user-doc -->
