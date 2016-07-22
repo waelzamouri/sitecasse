@@ -18,23 +18,25 @@ import org.hibernate.Transaction;
  * @author wael
  */
 public class DaoAvis implements IDaoAvis {
-    
-    private static Session session = HibernateUtil.getSession();
-    private static Transaction tx = null;
-    
+
+    private Session session;
+    private Transaction tx = null;
+
     @Override
     public Avis getAvisById(Long id_avis) {
+
+        final Avis avisReturn = (Avis) session.get(Avis.class, id_avis);
         
-        return (Avis) session.get(Avis.class, id_avis);
-        
+        return avisReturn;
+
     }
-    
+
     @Override
     public void addAvis(Avis avis) {
         try {
             tx = session.beginTransaction();
             session.save(avis);
-            
+
         } catch (HibernateException e) {
             if (tx != null) {
                 tx.rollback();
@@ -44,35 +46,20 @@ public class DaoAvis implements IDaoAvis {
             session.close();
         }
     }
-    
+
     @Override
     public List<Avis> getAllAvis() {
         return session.createCriteria(Avis.class).list();
     }
-    
+
     @Override
     public void deleteAvis(Avis avis) {
         session.delete(avis);
     }
 
     public DaoAvis() {
+        session = HibernateUtil.getSession();
     }
 
-    public Session getSession() {
-        return session;
-    }
 
-    public void setSession(Session session) {
-        this.session = session;
-    }
-
-    public Transaction getTx() {
-        return tx;
-    }
-
-    public void setTx(Transaction tx) {
-        this.tx = tx;
-    }
-    
-    
 }
