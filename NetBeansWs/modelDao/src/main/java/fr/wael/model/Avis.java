@@ -119,4 +119,30 @@ public class Avis implements Serializable{
         this.heure_com = heure_com;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + (int) (this.id_avis ^ (this.id_avis >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Avis other = (Avis) obj;
+        if (this.id_avis != other.id_avis) {
+            return false;
+        }
+        return true;
+    }
+    
+
 }

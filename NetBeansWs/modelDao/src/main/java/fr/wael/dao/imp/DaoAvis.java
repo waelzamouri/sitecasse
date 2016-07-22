@@ -26,7 +26,7 @@ public class DaoAvis implements IDaoAvis {
     public Avis getAvisById(Long id_avis) {
 
         final Avis avisReturn = (Avis) session.get(Avis.class, id_avis);
-        
+
         return avisReturn;
 
     }
@@ -54,12 +54,28 @@ public class DaoAvis implements IDaoAvis {
 
     @Override
     public void deleteAvis(Avis avis) {
-        session.delete(avis);
+       
+        try {
+            tx = session.beginTransaction();
+            session.delete(avis);
+           
+            
+
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+            
+        } finally {
+            session.close();
+            
+        }
+     
     }
 
     public DaoAvis() {
         session = HibernateUtil.getSession();
     }
-
 
 }

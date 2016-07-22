@@ -51,14 +51,14 @@ public class TUDaoAvis {
     public void tearDown() {
     }
 
-    @Test
+    //@Test
     public void tAddAvis() {
 
         iDaoAvis.addAvis(avis);
 
     }
 
-    @Test
+    //@Test
     public void tgetAvisById() {
         final Avis avis2 = iDaoAvis.getAvisById(3L);
 
@@ -67,13 +67,22 @@ public class TUDaoAvis {
 
     }
 
-    @Test
+    //@Test
     public void tgetAllAvis() {
         List<Avis> aviss = new ArrayList<>();
         aviss = iDaoAvis.getAllAvis();
         for(Avis a : aviss){
             System.out.println(a.getCommentaire());
         }
+    }
+    @Test
+    public void tdeleteAvis(){
+        Avis avis2 = new Avis();
+        avis2.setId_avis(2L);
+        avis2.setCommentaire("Bordel2");
+        
+        
+        iDaoAvis.deleteAvis(avis2);
     }
 
 }
