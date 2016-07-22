@@ -3,6 +3,7 @@ package fr.wael.model;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -28,7 +29,7 @@ public class Ref_modele implements Serializable{
     @Column(nullable = false)
     private String nom_modele;
 
-    @javax.persistence.OneToMany(mappedBy = "ref_modele")
+    @javax.persistence.OneToMany(mappedBy = "ref_modele", fetch = FetchType.EAGER)
     private List<Ref_Sous_Modele> ref_Sous_Modele;
 
     public List<Ref_Sous_Modele> getRef_Sous_Modele() {

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Set;
 import java.util.HashSet;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -30,7 +31,7 @@ public class Ref_Marque implements Serializable {
     @Column
     private String nom_marque;
 
-    @javax.persistence.OneToMany(mappedBy = "ref_Marque")
+    @javax.persistence.OneToMany(mappedBy = "ref_Marque",fetch = FetchType.EAGER)
     private Set<Ref_modele> ref_modele;
 
     /**

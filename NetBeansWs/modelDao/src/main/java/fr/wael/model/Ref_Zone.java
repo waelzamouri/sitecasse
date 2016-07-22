@@ -5,6 +5,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,7 +32,7 @@ public class Ref_Zone implements Serializable {
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
-    @javax.persistence.OneToMany(mappedBy = "ref_Zone")
+    @javax.persistence.OneToMany(mappedBy = "ref_Zone", fetch = FetchType.EAGER)
     private List<Ref_Piece> ref_Piece;
 
     @Column
