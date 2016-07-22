@@ -7,7 +7,7 @@ package fr.test;
 
 import fr.wael.model.Avis;
 import fr.wael.model.Client;
-import fr.wael.model.references.Ref_Piece;
+
 import fr.wael.util.HibernateUtil;
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,10 +45,10 @@ public class TestCreation {
 //            session.save(client);
 //            avis.setClient(client);
 //            session.save(avis);
-            Client c = (Client) session.get(Client.class, 1L);
-            List<Avis> listAvis = new ArrayList<>();
-            listAvis = c.getAvis();
-            System.out.println("nb etoiles : " + listAvis.get(0).getNb_etoile());
+//            Client c = (Client) session.get(Client.class, 1L);
+//            List<Avis> listAvis = new ArrayList<>();
+//            listAvis = c.getAvis();
+//            System.out.println("nb etoiles : " + listAvis.get(0).getNb_etoile());
             tx.commit();
 
         } catch (HibernateException e) {
