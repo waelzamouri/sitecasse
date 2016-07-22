@@ -28,11 +28,11 @@
         <mapping class="fr.wael.model.Demande" />
         <mapping class="fr.wael.model.Devis" />
         <mapping class="fr.wael.model.Piece" />
-        <mapping class="fr.wael.model.Ref_Marque" />
+<!--        <mapping class="fr.wael.model.Ref_Marque" />
         <mapping class="fr.wael.model.Ref_modele" />
 
         <mapping class="fr.wael.model.Ref_Sous_Modele" />
         <mapping class="fr.wael.model.Ref_Zone" />
-        <mapping class="fr.wael.model.Ref_Piece" />
+        <mapping class="fr.wael.model.Ref_Piece" />-->
     </session-factory>
 </hibernate-configuration>

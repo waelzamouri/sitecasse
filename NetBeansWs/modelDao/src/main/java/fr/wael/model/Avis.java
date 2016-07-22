@@ -52,6 +52,9 @@ public class Avis implements Serializable{
     @Temporal(TemporalType.DATE)
     private Date date_com;
 
+    @javax.persistence.Column(nullable = false)
+    @Temporal(TemporalType.TIME)
+    private Date heure_com;
     /**
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated
@@ -106,6 +109,14 @@ public class Avis implements Serializable{
 
     public void setDate_com(Date date_com) {
         this.date_com = date_com;
+    }
+
+    public Date getHeure_com() {
+        return heure_com;
+    }
+
+    public void setHeure_com(Date heure_com) {
+        this.heure_com = heure_com;
     }
 
 }
