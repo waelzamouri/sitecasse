@@ -5,21 +5,21 @@
  */
 package fr.wael.dao.interfaces;
 
-import fr.wael.model.Avis;
+import fr.wael.model.Devis;
 import java.util.List;
 
 /**
  *
  * @author wael
  */
-public interface IDaoAvis {
+public interface IDaoDevis {
 
-    public Avis getAvisById(Long id_avis);
+    public Devis getDevisById(Long id_avis);
 
-    public void addAvis(Avis avis);
+    public void addDevis(Devis avis);
 
-    public List<Avis> getAllAvis();
+    public List<Devis> getAllDevis();
 
-    public void deleteAvis(Avis avis);
+    public void deleteDevis(Devis avis);
 
 }

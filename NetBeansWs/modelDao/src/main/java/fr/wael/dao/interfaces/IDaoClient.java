@@ -5,21 +5,19 @@
  */
 package fr.wael.dao.interfaces;
 
-import fr.wael.model.Avis;
+import fr.wael.model.Client;
 import java.util.List;
 
 /**
  *
  * @author wael
  */
-public interface IDaoAvis {
+public interface IDaoClient {
+     public Client getClientById(Long id_avis);
 
-    public Avis getAvisById(Long id_avis);
+    public void addClient(Client avis);
 
-    public void addAvis(Avis avis);
+    public List<Client> getAllClient();
 
-    public List<Avis> getAllAvis();
-
-    public void deleteAvis(Avis avis);
-
+    public void deleteClient(Client avis);
 }
