@@ -5,8 +5,8 @@
  */
 package fr.wael.dao.imp;
 
-import fr.wael.dao.interfaces.IDaoAvis;
-import fr.wael.model.Avis;
+import fr.wael.dao.interfaces.IDaoRef_Marque;
+import fr.wael.model.Ref_Marque;
 import fr.wael.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -17,25 +17,25 @@ import org.hibernate.Transaction;
  *
  * @author wael
  */
-public class DaoAvis implements IDaoAvis {
+public class DaoRef_Marque implements IDaoRef_Marque {
 
     private Session session;
     private Transaction tx = null;
 
     @Override
-    public Avis getAvisById(Long id_avis) {
+    public Ref_Marque getRef_MarqueById(Long id_ref_Marque) {
         
-        final Avis avisReturn = (Avis) session.get(Avis.class, id_avis);
+        final Ref_Marque ref_MarqueReturn = (Ref_Marque) session.get(Ref_Marque.class, id_ref_Marque);
 
-        return avisReturn;
+        return ref_MarqueReturn;
 
     }
 
     @Override
-    public void addAvis(Avis avis) {
+    public void addRef_Marque(Ref_Marque ref_Marque) {
         try {
             tx = session.beginTransaction();
-            session.saveOrUpdate(avis);
+            session.saveOrUpdate(ref_Marque);
             tx.commit();
 
         } catch (HibernateException e) {
@@ -49,16 +49,16 @@ public class DaoAvis implements IDaoAvis {
     }
 
     @Override
-    public List<Avis> getAllAvis() {
-        return session.createCriteria(Avis.class).list();
+    public List<Ref_Marque> getAllRef_Marque() {
+        return session.createCriteria(Ref_Marque.class).list();
     }
 
     @Override
-    public void deleteAvis(Avis avis) {
+    public void deleteRef_Marque(Ref_Marque ref_Marque) {
 
         try {
             tx = session.beginTransaction();
-            session.delete(avis);
+            session.delete(ref_Marque);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -73,7 +73,7 @@ public class DaoAvis implements IDaoAvis {
 
     }
 
-    public DaoAvis() {
+    public DaoRef_Marque() {
         session = HibernateUtil.getSession();
     }
 

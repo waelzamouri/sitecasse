@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.wael.dao.imp;
+package fr.wael.dao.interfaces;
 
-import fr.wael.dao.interfaces.IDaoAvis;
-import fr.wael.model.Avis;
+import fr.wael.dao.imp.*;
+import fr.wael.dao.interfaces.IDaoRef_Zone;
+import fr.wael.model.Ref_Zone;
 import fr.wael.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -17,25 +18,25 @@ import org.hibernate.Transaction;
  *
  * @author wael
  */
-public class DaoAvis implements IDaoAvis {
+public class DaoRef_Zone implements IDaoRef_Zone {
 
     private Session session;
     private Transaction tx = null;
 
     @Override
-    public Avis getAvisById(Long id_avis) {
+    public Ref_Zone getRef_ZoneById(Long id_ref_Zone) {
         
-        final Avis avisReturn = (Avis) session.get(Avis.class, id_avis);
+        final Ref_Zone ref_ZoneReturn = (Ref_Zone) session.get(Ref_Zone.class, id_ref_Zone);
 
-        return avisReturn;
+        return ref_ZoneReturn;
 
     }
 
     @Override
-    public void addAvis(Avis avis) {
+    public void addRef_Zone(Ref_Zone ref_Zone) {
         try {
             tx = session.beginTransaction();
-            session.saveOrUpdate(avis);
+            session.saveOrUpdate(ref_Zone);
             tx.commit();
 
         } catch (HibernateException e) {
@@ -49,16 +50,16 @@ public class DaoAvis implements IDaoAvis {
     }
 
     @Override
-    public List<Avis> getAllAvis() {
-        return session.createCriteria(Avis.class).list();
+    public List<Ref_Zone> getAllRef_Zone() {
+        return session.createCriteria(Ref_Zone.class).list();
     }
 
     @Override
-    public void deleteAvis(Avis avis) {
+    public void deleteRef_Zone(Ref_Zone ref_Zone) {
 
         try {
             tx = session.beginTransaction();
-            session.delete(avis);
+            session.delete(ref_Zone);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -73,7 +74,7 @@ public class DaoAvis implements IDaoAvis {
 
     }
 
-    public DaoAvis() {
+    public DaoRef_Zone() {
         session = HibernateUtil.getSession();
     }
 

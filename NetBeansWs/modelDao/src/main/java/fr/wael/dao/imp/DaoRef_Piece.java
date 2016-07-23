@@ -5,8 +5,8 @@
  */
 package fr.wael.dao.imp;
 
-import fr.wael.dao.interfaces.IDaoAvis;
-import fr.wael.model.Avis;
+import fr.wael.dao.interfaces.IDaoRef_Piece;
+import fr.wael.model.Ref_Piece;
 import fr.wael.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -17,25 +17,25 @@ import org.hibernate.Transaction;
  *
  * @author wael
  */
-public class DaoAvis implements IDaoAvis {
+public class DaoRef_Piece implements IDaoRef_Piece {
 
     private Session session;
     private Transaction tx = null;
 
     @Override
-    public Avis getAvisById(Long id_avis) {
+    public Ref_Piece getRef_PieceById(Long id_ref_Piece) {
         
-        final Avis avisReturn = (Avis) session.get(Avis.class, id_avis);
+        final Ref_Piece ref_PieceReturn = (Ref_Piece) session.get(Ref_Piece.class, id_ref_Piece);
 
-        return avisReturn;
+        return ref_PieceReturn;
 
     }
 
     @Override
-    public void addAvis(Avis avis) {
+    public void addRef_Piece(Ref_Piece ref_Piece) {
         try {
             tx = session.beginTransaction();
-            session.saveOrUpdate(avis);
+            session.saveOrUpdate(ref_Piece);
             tx.commit();
 
         } catch (HibernateException e) {
@@ -49,16 +49,16 @@ public class DaoAvis implements IDaoAvis {
     }
 
     @Override
-    public List<Avis> getAllAvis() {
-        return session.createCriteria(Avis.class).list();
+    public List<Ref_Piece> getAllRef_Piece() {
+        return session.createCriteria(Ref_Piece.class).list();
     }
 
     @Override
-    public void deleteAvis(Avis avis) {
+    public void deleteRef_Piece(Ref_Piece ref_Piece) {
 
         try {
             tx = session.beginTransaction();
-            session.delete(avis);
+            session.delete(ref_Piece);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -73,7 +73,7 @@ public class DaoAvis implements IDaoAvis {
 
     }
 
-    public DaoAvis() {
+    public DaoRef_Piece() {
         session = HibernateUtil.getSession();
     }
 

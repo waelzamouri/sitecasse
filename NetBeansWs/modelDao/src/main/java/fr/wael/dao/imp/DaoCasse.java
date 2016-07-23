@@ -5,8 +5,8 @@
  */
 package fr.wael.dao.imp;
 
-import fr.wael.dao.interfaces.IDaoAvis;
-import fr.wael.model.Avis;
+import fr.wael.dao.interfaces.IDaoCasse;
+import fr.wael.model.Casse;
 import fr.wael.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -17,25 +17,25 @@ import org.hibernate.Transaction;
  *
  * @author wael
  */
-public class DaoAvis implements IDaoAvis {
+public class DaoCasse implements IDaoCasse {
 
     private Session session;
     private Transaction tx = null;
 
     @Override
-    public Avis getAvisById(Long id_avis) {
+    public Casse getCasseById(Long id_casse) {
         
-        final Avis avisReturn = (Avis) session.get(Avis.class, id_avis);
+        final Casse casseReturn = (Casse) session.get(Casse.class, id_casse);
 
-        return avisReturn;
+        return casseReturn;
 
     }
 
     @Override
-    public void addAvis(Avis avis) {
+    public void addCasse(Casse casse) {
         try {
             tx = session.beginTransaction();
-            session.saveOrUpdate(avis);
+            session.saveOrUpdate(casse);
             tx.commit();
 
         } catch (HibernateException e) {
@@ -49,16 +49,16 @@ public class DaoAvis implements IDaoAvis {
     }
 
     @Override
-    public List<Avis> getAllAvis() {
-        return session.createCriteria(Avis.class).list();
+    public List<Casse> getAllCasse() {
+        return session.createCriteria(Casse.class).list();
     }
 
     @Override
-    public void deleteAvis(Avis avis) {
+    public void deleteCasse(Casse casse) {
 
         try {
             tx = session.beginTransaction();
-            session.delete(avis);
+            session.delete(casse);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -73,7 +73,7 @@ public class DaoAvis implements IDaoAvis {
 
     }
 
-    public DaoAvis() {
+    public DaoCasse() {
         session = HibernateUtil.getSession();
     }
 
