@@ -5,13 +5,16 @@
  */
 package fr.wael.presentation;
 
-import javax.inject.Named;
+import fr.wael.dao.imp.DaoRef_Marque;
+import fr.wael.dao.interfaces.IDaoRef_Marque;
+import fr.wael.model.Ref_Marque;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
-
-
-
+import javax.faces.event.ValueChangeEvent;
 
 /**
  *
@@ -20,15 +23,58 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 @SessionScoped
 public class PremierBean implements Serializable {
-private static final long serialVersionUID = 1L;
+
+    private static final long serialVersionUID = 1L;
+    private IDaoRef_Marque daoRef_Marque;
+    private Ref_Marque ref_Marque;
+    private List<Ref_Marque> ref_marquess;
+
     /**
      * Creates a new instance of PremierBean
      */
     public PremierBean() {
+        daoRef_Marque = new DaoRef_Marque();
+        ref_Marque = new Ref_Marque();
+        ref_marquess = new ArrayList();
     }
+
+    private List<Ref_Marque> toutesLesMarques() {
+
+        ref_marquess = daoRef_Marque.getAllRef_Marque();
+        //System.out.println(ref_marquess.get(0).getNom_marque());
+        return ref_marquess;
+
+    }
+    public void valueChangeMethod(ValueChangeEvent e){
+            
+	}
 
     public String toRecherche() {
         return "rech";
+    }
+
+    public IDaoRef_Marque getDaoRef_Marque() {
+        return daoRef_Marque;
+    }
+
+    public void setDaoRef_Marque(IDaoRef_Marque daoRef_Marque) {
+        this.daoRef_Marque = daoRef_Marque;
+    }
+
+    public Ref_Marque getRef_Marque() {
+        return ref_Marque;
+    }
+
+    public void setRef_Marque(Ref_Marque ref_Marque) {
+        this.ref_Marque = ref_Marque;
+    }
+
+    public List<Ref_Marque> getRef_marquess() {
+        return toutesLesMarques();
+    }
+
+    public void setRef_marquess(ArrayList<Ref_Marque> ref_marquess) {
+        this.ref_marquess = ref_marquess;
     }
 
 }
