@@ -78,8 +78,8 @@ public class TUDaoAvis {
     @Test
     public void tdeleteAvis(){
         Avis avis2 = new Avis();
-        avis2.setId_avis(2L);
-        avis2.setCommentaire("Bordel2");
+        //avis2.setId_avis(2L);
+        avis2.setCommentaire("Bordel");
         
         
         iDaoAvis.deleteAvis(avis2);

@@ -36,6 +36,7 @@ public class DaoAvis implements IDaoAvis {
         try {
             tx = session.beginTransaction();
             session.save(avis);
+            tx.commit();
 
         } catch (HibernateException e) {
             if (tx != null) {
@@ -54,24 +55,22 @@ public class DaoAvis implements IDaoAvis {
 
     @Override
     public void deleteAvis(Avis avis) {
-       
+
         try {
             tx = session.beginTransaction();
             session.delete(avis);
-           
-            
-
+            tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
                 tx.rollback();
             }
             e.printStackTrace();
-            
+
         } finally {
             session.close();
-            
+
         }
-     
+
     }
 
     public DaoAvis() {
