@@ -22,5 +22,9 @@ public class PremierBean implements Serializable {
      */
     public PremierBean() {
     }
-    
+
+    public String toRecherche() {
+        return "recherche";
+    }
+
 }

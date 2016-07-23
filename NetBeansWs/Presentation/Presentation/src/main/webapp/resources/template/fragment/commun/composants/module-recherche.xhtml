@@ -33,7 +33,9 @@
                     <input type="text" class="form-control" id="piece" placeholder="Exemple : Alternateur" />
                 </div>
                 <center>
-                    <button type="submit" class="btn3d btn btn-danger">Trouver  <span class="glyphicon glyphicon glyphicon-eye-open"></span></button></center>
+                    <!--<button type="submit" class="btn3d btn btn-danger">Trouver  <span class="glyphicon glyphicon glyphicon-eye-open"></span></button></center>-->
+                    <h:commandButton action="#{premierBean.toRecherche()}" value="Trouver" class="btn3d btn btn-danger" ><span class="glyphicon glyphicon glyphicon-eye-open"></span></h:commandButton></center>
+                <!--<h:link outcome="recherche" value="Trouver"  class="btn3d btn btn-danger"></h:link>-->
             </div>
         </form>
     </ui:component>
