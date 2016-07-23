@@ -29,7 +29,7 @@ public class Ref_modele implements Serializable{
     @Column(nullable = false)
     private String nom_modele;
 
-    @javax.persistence.OneToMany(mappedBy = "ref_modele", fetch = FetchType.EAGER)
+    @javax.persistence.OneToMany(mappedBy = "ref_modele")
     private List<Ref_Sous_Modele> ref_Sous_Modele;
 
     public List<Ref_Sous_Modele> getRef_Sous_Modele() {

@@ -31,7 +31,7 @@ public class Ref_Marque implements Serializable {
     @Column
     private String nom_marque;
 
-    @javax.persistence.OneToMany(mappedBy = "ref_Marque",fetch = FetchType.EAGER)
+    @javax.persistence.OneToMany(mappedBy = "ref_Marque")
     private Set<Ref_modele> ref_modele;
 
     /**

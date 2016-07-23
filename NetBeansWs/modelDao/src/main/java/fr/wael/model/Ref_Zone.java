@@ -32,7 +32,7 @@ public class Ref_Zone implements Serializable {
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
-    @javax.persistence.OneToMany(mappedBy = "ref_Zone", fetch = FetchType.EAGER)
+    @javax.persistence.OneToMany(mappedBy = "ref_Zone")
     private List<Ref_Piece> ref_Piece;
 
     @Column

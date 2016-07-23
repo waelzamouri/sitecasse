@@ -35,7 +35,7 @@ public class Ref_Sous_Modele implements Serializable {
      * <!-- begin-user-doc -->
      * <!--  end-user-doc  --> @generated @ordered
      */
-    @javax.persistence.ManyToMany(mappedBy = "ref_Sous_Modele",fetch = FetchType.EAGER)
+    @javax.persistence.ManyToMany(mappedBy = "ref_Sous_Modele")
     private List<Ref_Zone> ref_Zone;
 
     @Column(nullable = true)
