@@ -8,15 +8,19 @@ package fr.wael.presentation;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
+
+
+
 
 /**
  *
  * @author wael
  */
-@Named(value = "premierBean")
+@ManagedBean
 @SessionScoped
 public class PremierBean implements Serializable {
-
+private static final long serialVersionUID = 1L;
     /**
      * Creates a new instance of PremierBean
      */
@@ -24,7 +28,7 @@ public class PremierBean implements Serializable {
     }
 
     public String toRecherche() {
-        return "recherche";
+        return "rech";
     }
 
 }
