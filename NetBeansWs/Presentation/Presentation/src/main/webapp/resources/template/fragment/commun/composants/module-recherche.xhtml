@@ -3,35 +3,36 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-          
+
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:component id="module-recherche">
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
 
-        <h:form class="form-horizontal" role="form">
+        <h:form class="form-horizontal" role="form" id="form-rech">
             <div class="box">
                 <center><h3><span class="label label-default">Recherche rapide :</span></h3></center>
                 <div class="form-group">
                     <label for="marque">Marque</label>
-                    <h:selectOneMenu value="#{premierBean.ref_Marque.id_ref_marque}" id="marque" class="form-control" valueChangeListener="#{premierBean.valueChangeMethod}">
-                        <f:selectItems var="marqueVar" value="#{premierBean.ref_marquess}" itemLabel="#{marqueVar.nom_marque}" itemValue="#{marqueVar.id_ref_marque}" />
-                    </h:selectOneMenu>
-<!--                    <select class="form-control" id="marque">
-                        <option>Peugeot</option>
-                        <option>Renault</option>
-                        <option>Mercedes</option>
-                        <option>Wolswagen</option>
-                    </select>-->
+                    <h:inputText class="form-control" id="marque"  />
+
+                    <!--                    <select class="form-control" id="marque">
+                                            <option>Peugeot</option>
+                                            <option>Renault</option>
+                                            <option>Mercedes</option>
+                                            <option>Wolswagen</option>
+                                        </select>-->
                 </div>
                 <div class="form-group">
                     <label for="model">Modèle</label>
-                    
-<!--                    <select class="form-control" id="model">
-                        <option>Clio</option>
-                        <option>Saphir</option>
-                        <option>espace</option>
-                        <option>laguna</option>
-                    </select>-->
+                    <h:inputText class="form-control" id="modele" />
+
+                    <!--                                        <select class="form-control" id="model">
+                                                                <option>Clio</option>
+                                                                <option>Saphir</option>
+                                                                <option>espace</option>
+                                                                <option>laguna</option>
+                                                            </select>-->
                 </div>
                 <div class="form-group">
                     <label for="piece">Pièce</label>
@@ -40,7 +41,7 @@
                 <center>
                     <!--<button type="submit" class="btn3d btn btn-danger">Trouver  <span class="glyphicon glyphicon glyphicon-eye-open"></span></button></center>-->
                     <h:commandButton action="#{premierBean.toRecherche()}" value="Trouver" class="btn3d btn btn-danger" ><span class="glyphicon glyphicon glyphicon-eye-open"></span></h:commandButton></center>
-                    <!--<h:link outcome="rech" value="Trouver"  class="btn3d btn btn-danger"></h:link></center>-->
+                <!--<h:link outcome="rech" value="Trouver"  class="btn3d btn btn-danger"></h:link></center>-->
             </div>
         </h:form>
     </ui:component>
