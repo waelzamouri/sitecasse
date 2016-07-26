@@ -54,9 +54,20 @@ public class Piece implements Serializable{
 
     @javax.persistence.Column(nullable = true)
     private String com_client;
+    
+    @javax.persistence.Column(nullable = true)
+    private String sous_marque;
 
     public Piece() {
         super();
+    }
+
+    public String getSous_marque() {
+        return sous_marque;
+    }
+
+    public void setSous_marque(String sous_marque) {
+        this.sous_marque = sous_marque;
     }
 
     public long getId_piece() {
