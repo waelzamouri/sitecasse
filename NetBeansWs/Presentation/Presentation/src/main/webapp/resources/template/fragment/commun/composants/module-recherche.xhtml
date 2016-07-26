@@ -3,7 +3,8 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:component id="module-recherche">
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
@@ -14,7 +15,7 @@
                 <center><h3><span class="label label-default">Recherche rapide :</span></h3></center>
                 <div class="form-group">
                     <label for="marque">Marque</label>
-                    <h:inputText class="form-control" id="marque"  />
+                    <h:inputText class="form-control" id="marque" placeholder="Bonjour"/>
 
                     <!--                    <select class="form-control" id="marque">
                                             <option>Peugeot</option>
