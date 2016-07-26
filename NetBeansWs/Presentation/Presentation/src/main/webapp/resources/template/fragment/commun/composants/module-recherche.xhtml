@@ -15,7 +15,7 @@
                 <center><h3><span class="label label-default">Recherche rapide :</span></h3></center>
                 <div class="form-group">
                     <label for="marque">Marque</label>
-                    <h:inputText class="form-control" id="marque" placeholder="Bonjour"/>
+                    <h:inputText class="form-control" id="marque" alt="Marque" value="#{premierBean.f_marque}"/>
 
                     <!--                    <select class="form-control" id="marque">
                                             <option>Peugeot</option>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="model">Modèle</label>
-                    <h:inputText class="form-control" id="modele" />
+                    <h:inputText class="form-control" id="modele" alt="marque" value="#{premierBean.f_modele}"/>
 
                     <!--                                        <select class="form-control" id="model">
                                                                 <option>Clio</option>
@@ -37,11 +37,12 @@
                 </div>
                 <div class="form-group">
                     <label for="piece">Pièce</label>
-                    <input type="text" class="form-control" id="piece" placeholder="Exemple : Alternateur" />
+                    <h:inputText   class="form-control" id="piece"  value="#{premierBean.f_nom_piece}"/>
                 </div>
                 <center>
                     <!--<button type="submit" class="btn3d btn btn-danger">Trouver  <span class="glyphicon glyphicon glyphicon-eye-open"></span></button></center>-->
-                    <h:commandButton action="#{premierBean.toRecherche()}" value="Trouver" class="btn3d btn btn-danger" ><span class="glyphicon glyphicon glyphicon-eye-open"></span></h:commandButton></center>
+
+                    <h:commandLink action="#{premierBean.toRecherche()}"  class="btn3d btn btn-danger" >Trouver   <h:outputText class="glyphicon glyphicon glyphicon-eye-open" /></h:commandLink></center>
                 <!--<h:link outcome="rech" value="Trouver"  class="btn3d btn btn-danger"></h:link></center>-->
             </div>
         </h:form>
