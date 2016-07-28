@@ -21,7 +21,7 @@
         </property>
         <property name="hibernate.connection.password">
         </property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <mapping class="fr.wael.model.Avis" />
         <mapping class="fr.wael.model.Casse" />
         <mapping class="fr.wael.model.Client" />

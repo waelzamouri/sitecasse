@@ -26,7 +26,7 @@ public class Piece implements Serializable{
      * <!--  end-user-doc  --> @generated @ordered
      */
     @javax.persistence.ManyToOne
-    @javax.persistence.JoinColumn(nullable = false)
+    @javax.persistence.JoinColumn(nullable = true)
     private Demande demande;
 
     /**
@@ -46,7 +46,7 @@ public class Piece implements Serializable{
     @javax.persistence.Column(nullable = false)
     private String model;
 
-    @javax.persistence.Column(nullable = false)
+    @javax.persistence.Column(nullable = true)
     private String zone;
 
     @javax.persistence.Column(nullable = false)

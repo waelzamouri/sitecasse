@@ -5,8 +5,10 @@
  */
 package fr.wael.presentation;
 
+import fr.wael.dao.imp.DaoPiece;
 import fr.wael.dao.imp.DaoRef_Marque;
 import fr.wael.dao.imp.DaoRef_modele;
+import fr.wael.dao.interfaces.IDaoPiece;
 import fr.wael.dao.interfaces.IDaoRef_Marque;
 import fr.wael.dao.interfaces.IDaoRef_modele;
 import fr.wael.model.Piece;
@@ -65,7 +67,13 @@ public class PremierBean implements Serializable {
 
   
     public String toRecherche(){
+//        final IDaoPiece iDaoPiece = new DaoPiece();
+//        Piece piece = new Piece();
+//        piece.setMarque(f_marque);
+//        piece.setModel(f_modele);
+//        piece.setNom_piece(f_nom_piece);
+//        iDaoPiece.addPiece(piece);
+
         return "rech";
     }
-
 }
