@@ -13,13 +13,14 @@ import fr.wael.dao.interfaces.IDaoRef_Marque;
 import fr.wael.dao.interfaces.IDaoRef_modele;
 import fr.wael.model.Piece;
 import fr.wael.model.Ref_Marque;
-import javax.enterprise.context.SessionScoped;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.event.ValueChangeEvent;
+import javax.faces.bean.SessionScoped;
+
 
 /**
  *

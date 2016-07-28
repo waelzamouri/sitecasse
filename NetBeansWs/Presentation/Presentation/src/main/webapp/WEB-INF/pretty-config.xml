@@ -10,5 +10,11 @@
         
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
+       <url-mapping id="affiche-marque">
+        <pattern value="/affiche-marque" />
+        <view-id value="/faces/pages/accueil/affiche-marque.xhtml" />
+        
+        <!--<action>#{premierBean.toRecherche()}</action>-->
+    </url-mapping>
 
 </pretty-config>
