@@ -5,25 +5,21 @@
  */
 package fr.wael.presentation;
 
-import fr.wael.dao.interfaces.IDaoRef_modele;
 import fr.wael.metierplateforme.implemntation.MRef_Modele;
 import fr.wael.metierplateforme.interfaces.ImRef_Modele;
 import fr.wael.model.Ref_modele;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 /**
  *
  * @author wael
  */
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class BeanChargeListModele implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -36,9 +32,6 @@ public class BeanChargeListModele implements Serializable {
     public BeanChargeListModele() {
         imRef_Modele = new MRef_Modele();
         
-
-        
-        int a = 0;
     }
 
     public List<Ref_modele> getRef_modele() {
