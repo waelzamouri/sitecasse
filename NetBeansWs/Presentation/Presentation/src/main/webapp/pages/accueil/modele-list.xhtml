@@ -5,11 +5,55 @@
 
 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>#{premierBean.f_marque}</div>
-    </body>
+
+    <ui:composition template="../../resources/template/layout/commun/layout.xhtml">
+        <ui:define name="content">
+
+            <h:body >
+                <!--<link rel="stylesheet" type="text/css" href="../../resources/css/style.css" />-->
+
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/journal/bootstrap.min.css" />
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous" />
+                <!--<script type="text/javascript" src="../../resources/js/style.js" ></script>-->
+                <h:outputStylesheet library="css" name="style.css" />
+                <h:outputScript library="js" name="style.js" />
+
+
+                <div class="container">
+                    <div class="well">
+                        <!--                    <ui:insert name="module-marque-list" >
+                                                <ui:include src="../../resources/template/fragment/commun/composants/module-marque-list.xhtml" />
+                                            </ui:insert>-->
+                        <div class="box">
+                            <div class="row">
+                                <h:form id="form-marque-affiche">
+                                    <ui:repeat var="m" value="#{beanChargeListModele.ref_modele}">
+                                        <div class="col-md-2 col-sm-3 col-xs-6 pull-center">
+                                            <center><h:graphicImage library="images" class="img-rsponsive" style="max-height: 120px;padding: 15px;" name="#{m.nom_img_modele}" alt="#{m.nom_modele}"/></center>
+                                            <!--<center><p class="label label-default">#{m.nom_modele}</p></center>-->
+
+                                            
+                                            <center><h:commandButton class="btn3d btn btn-info" action="#{premierBean.toZones()}" value="#{m.nom_modele}">
+                                                    <f:param name="modele" value="#{m.nom_modele}" />
+                                                </h:commandButton></center>
+                                        </div>
+
+                                    </ui:repeat>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </h:body>
+
+
+        </ui:define>
+    </ui:composition>
 </html>

@@ -72,8 +72,15 @@ public class PremierBean implements Serializable {
         Map<String, String> params
                 = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         f_marque = params.get("marque");
-        
+
         return "model-list";
+    }
+
+    public String toZones() {
+         Map<String, String> params
+                = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+        f_modele = params.get("modele");
+        return "zone-list";
     }
 
 }

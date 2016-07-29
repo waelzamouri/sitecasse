@@ -3,6 +3,7 @@ package fr.wael.model;
 import java.io.Serializable;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,8 +32,12 @@ public class Ref_Marque implements Serializable {
     @Column
     private String nom_marque;
 
+    @Column
+    private String url_marque;
+    
+    
     @javax.persistence.OneToMany(mappedBy = "ref_Marque")
-    private Set<Ref_modele> ref_modele;
+    private List<Ref_modele> ref_modele;
 
     /**
      * <!-- begin-user-doc -->
@@ -50,11 +55,11 @@ public class Ref_Marque implements Serializable {
         this.id_ref_marque = id_ref_marque;
     }
 
-    public Set<Ref_modele> getRef_modele() {
+    public List<Ref_modele> getRef_modele() {
         return ref_modele;
     }
 
-    public void setRef_modele(Set<Ref_modele> ref_modele) {
+    public void setRef_modele(List<Ref_modele> ref_modele) {
         this.ref_modele = ref_modele;
     }
 
@@ -65,5 +70,14 @@ public class Ref_Marque implements Serializable {
     public void setNom_marque(String nom_marque) {
         this.nom_marque = nom_marque;
     }
+
+    public String getUrl_marque() {
+        return url_marque;
+    }
+
+    public void setUrl_marque(String url_marque) {
+        this.url_marque = url_marque;
+    }
+    
 
 }

@@ -10,11 +10,9 @@ import fr.wael.dao.interfaces.IDaoRef_Marque;
 import fr.wael.model.Ref_Marque;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 /**
  *

@@ -22,5 +22,11 @@
         
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
+     <url-mapping id="zone-list">
+        <pattern value="/zone-list" />
+        <view-id value="/faces/pages/accueil/zone-list.xhtml" />
+        
+        <!--<action>#{premierBean.toRecherche()}</action>-->
+    </url-mapping>
 
 </pretty-config>
