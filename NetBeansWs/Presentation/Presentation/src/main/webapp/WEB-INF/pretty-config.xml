@@ -16,5 +16,11 @@
         
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
+      <url-mapping id="model-list">
+        <pattern value="/modele-list" />
+        <view-id value="/faces/pages/accueil/modele-list.xhtml" />
+        
+        <!--<action>#{premierBean.toRecherche()}</action>-->
+    </url-mapping>
 
 </pretty-config>

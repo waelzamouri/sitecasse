@@ -3,7 +3,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
 
-      >
+
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="../../resources/template/layout/commun/layout.xhtml">
         <ui:define name="content">
@@ -28,13 +29,17 @@
                         <div class="box">
                             <div class="row">
                                 <h:form id="form-marque-affiche">
-                                        <ui:repeat var="m" value="#{beanChargeListMarque.ref_marques}">
+                                    <ui:repeat var="m" value="#{beanChargeListMarque.ref_marques}">
                                         <div class="col-md-2 col-sm-3 col-xs-6 pull-center">
                                             <center><h:graphicImage library="images" class="img-rsponsive" style="max-height: 120px;padding: 15px;" name="#{m.url_marque}" alt="#{m.nom_marque}"/></center>
                                             <!--<center><p class="label label-default">#{m.nom_marque}</p></center>-->
-                                            <center><h:commandLink class="label label-default" action="#{premierBean.f_marque}">#{m.nom_marque}</h:commandLink></center>
-                                        </div>
+
                                             
+                                            <center><h:commandButton class="btn3d btn btn-info" action="#{premierBean.toModele()}" value="#{m.nom_marque}">
+                                                    <f:param name="marque" value="#{m.nom_marque}" />
+                                                </h:commandButton></center>
+                                        </div>
+
                                     </ui:repeat>
                                 </h:form>
                             </div>

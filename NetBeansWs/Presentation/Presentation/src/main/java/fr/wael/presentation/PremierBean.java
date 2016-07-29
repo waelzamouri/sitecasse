@@ -5,22 +5,12 @@
  */
 package fr.wael.presentation;
 
-import fr.wael.dao.imp.DaoPiece;
-import fr.wael.dao.imp.DaoRef_Marque;
-import fr.wael.dao.imp.DaoRef_modele;
-import fr.wael.dao.interfaces.IDaoPiece;
-import fr.wael.dao.interfaces.IDaoRef_Marque;
-import fr.wael.dao.interfaces.IDaoRef_modele;
-import fr.wael.model.Piece;
-import fr.wael.model.Ref_Marque;
-
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -35,11 +25,12 @@ public class PremierBean implements Serializable {
     private String f_marque;
     private String f_modele;
     private String f_nom_piece;
+
     /**
      * Creates a new instance of PremierBean
      */
     public PremierBean() {
-        
+
     }
 
     public String getF_marque() {
@@ -66,8 +57,7 @@ public class PremierBean implements Serializable {
         this.f_nom_piece = f_nom_piece;
     }
 
-  
-    public String toRecherche(){
+    public String toRecherche() {
 //        final IDaoPiece iDaoPiece = new DaoPiece();
 //        Piece piece = new Piece();
 //        piece.setMarque(f_marque);
@@ -77,4 +67,13 @@ public class PremierBean implements Serializable {
 
         return "rech";
     }
+
+    public String toModele() {
+        Map<String, String> params
+                = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+        f_marque = params.get("marque");
+        
+        return "model-list";
+    }
+
 }

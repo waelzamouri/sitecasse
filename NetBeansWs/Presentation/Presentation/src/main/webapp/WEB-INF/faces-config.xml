@@ -21,4 +21,16 @@
             <redirect />
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/pages/accueil/affiche-marque.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>
+                #{premierBean.toModele()}
+            </from-action>
+            <from-outcome>model-list</from-outcome>
+            <to-view-id>/pages/accueil/modele-list.xhtml</to-view-id>
+             <redirect />
+        </navigation-case>
+    </navigation-rule>
+    
 </faces-config>
