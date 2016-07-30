@@ -22,11 +22,43 @@
                 <div class="container">
                     <div class="well">
                         <div class="box">
-                            <h:form id="form-sous-model">
-                                <h:dataTable value="" var="" >
-                                    
-                                </h:dataTable>
-                            </h:form>
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <h3><center><span class="label label-default">Affinez votre modèle de vehicule</span></center></h3>
+                                    <br />
+                                    <legend />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h:form id="form-sous-model">
+
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Modèle</th>
+                                                <th>Début production</th>
+                                                <th>Fin production</th>
+                                                <th>Choix</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <ui:repeat value="#{beanChargeListSousModele.ref_Sous_Modeles}" var="sm">
+                                                <tr>
+                                                    <th scope="row">#{sm.id_ref_sous_modele}</th>
+                                                    <td>#{sm.nom_sous_model}</td>
+                                                    <td>#{sm.date_deb_prod}</td>
+                                                    <td>#{sm.date_fin_prod}</td>
+                                                    <td><h:commandLink value="choisir" class="btn3d btn btn-info" />
+                                                        <param name="idsousmodel" value="#{sm.id_ref_sous_modele}" />
+                                                    </td>
+                                                </tr>
+                                            </ui:repeat>
+                                        </tbody>
+                                    </table>
+                                </h:form>
+                            </div>
                         </div>
                     </div>
 

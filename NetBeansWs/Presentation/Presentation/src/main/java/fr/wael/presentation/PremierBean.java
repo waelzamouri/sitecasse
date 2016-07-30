@@ -5,11 +5,14 @@
  */
 package fr.wael.presentation;
 
+import fr.wael.metierplateforme.implemntation.MRef_Sous_Modele;
+import fr.wael.metierplateforme.interfaces.ImRef_Sous_Modele;
 import java.io.Serializable;
 import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 /**
@@ -21,16 +24,18 @@ import javax.faces.context.FacesContext;
 public class PremierBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    private ImRef_Sous_Modele imRef_Sous_Modele;
     private String f_marque;
     private String f_modele;
     private String f_nom_piece;
     private String id_marque;
+    private String id_modele;
+
     /**
      * Creates a new instance of PremierBean
      */
     public PremierBean() {
-
+        imRef_Sous_Modele = new MRef_Sous_Modele();
     }
 
     public String getId_marque() {
@@ -40,10 +45,14 @@ public class PremierBean implements Serializable {
     public void setId_marque(String id_marque) {
         this.id_marque = id_marque;
     }
-    
 
+    public String getId_modele() {
+        return id_modele;
+    }
 
-    
+    public void setId_modele(String id_modele) {
+        this.id_modele = id_modele;
+    }
 
     public String getF_marque() {
         return f_marque;
@@ -70,12 +79,8 @@ public class PremierBean implements Serializable {
     }
 
     public String toRecherche() {
-//        final IDaoPiece iDaoPiece = new DaoPiece();
-//        Piece piece = new Piece();
-//        piece.setMarque(f_marque);
-//        piece.setModel(f_modele);
-//        piece.setNom_piece(f_nom_piece);
-//        iDaoPiece.addPiece(piece);
+
+        this.id_modele = String.valueOf(imRef_Sous_Modele.getIdModelByName(f_modele));
 
         return "rech";
     }
@@ -88,11 +93,12 @@ public class PremierBean implements Serializable {
         return "model-list";
     }
 
-    public String toZones() {
-         Map<String, String> params
+    public String toSousModele() {
+        Map<String, String> params
                 = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         f_modele = params.get("modele");
-        return "zone-list";
+        id_modele = params.get("idmodele");
+        return "sous-modele";
     }
 
 }

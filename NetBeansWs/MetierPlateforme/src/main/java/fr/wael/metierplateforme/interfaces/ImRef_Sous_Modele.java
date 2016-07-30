@@ -13,5 +13,6 @@ import java.util.List;
  * @author wael
  */
 public interface ImRef_Sous_Modele {
-    public List<Ref_Sous_Modele> getSousModelByModel(String nom_model);
+    public List<Ref_Sous_Modele> getSousModelByModel(long id_modele);
+    public long getIdModelByName(String name_modele);
 }

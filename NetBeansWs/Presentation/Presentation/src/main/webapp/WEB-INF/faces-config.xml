@@ -36,10 +36,10 @@
         <from-view-id>/pages/accueil/modele-list.xhtml</from-view-id>
         <navigation-case>
             <from-action>
-                #{premierBean.toZones()}
+                #{premierBean.toSousModele()}
             </from-action>
-            <from-outcome>zone-list</from-outcome>
-            <to-view-id>/pages/accueil/zone-list.xhtml</to-view-id>
+            <from-outcome>sous-modele</from-outcome>
+            <to-view-id>/pages/accueil/affiche-sous-modele.xhtml</to-view-id>
              <redirect />
         </navigation-case>
     </navigation-rule>

@@ -26,4 +26,7 @@ public class MRef_Modele implements ImRef_Modele {
         return ref_marque_trouve.getRef_modele();
     }
 
+    public MRef_Modele() {
+    }
+
 }

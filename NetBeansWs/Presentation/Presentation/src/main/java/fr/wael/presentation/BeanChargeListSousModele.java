@@ -5,7 +5,12 @@
  */
 package fr.wael.presentation;
 
+import fr.wael.metierplateforme.implemntation.MRef_Sous_Modele;
+import fr.wael.metierplateforme.interfaces.ImRef_Sous_Modele;
+import fr.wael.model.Ref_Sous_Modele;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 /**
@@ -15,9 +20,44 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class BeanChargeListSousModele {
-    private static final long serialVersionUID = 1L;
 
-    public BeanChargeListSousModele() {
+    private static final long serialVersionUID = 1L;
+    private ImRef_Sous_Modele imRef_Sous_Modele;
+    private List<Ref_Sous_Modele> ref_Sous_Modeles;
+
+    @ManagedProperty(value = "#{premierBean.id_modele}")
+    private String id_modele;
+    
+    @ManagedProperty(value = "#{premierBean.f_modele}")
+    private String f_modele;
+
+    public List<Ref_Sous_Modele> getRef_Sous_Modeles() {
+        ref_Sous_Modeles = imRef_Sous_Modele.getSousModelByModel(Long.parseLong(id_modele));
+        return ref_Sous_Modeles;
+    }
+
+    public void setRef_Sous_Modeles(List<Ref_Sous_Modele> ref_Sous_Modeles) {
+        this.ref_Sous_Modeles = ref_Sous_Modeles;
+    }
+
+    public String getId_modele() {
+        return id_modele;
+    }
+
+    public void setId_modele(String id_modele) {
+        this.id_modele = id_modele;
+    }
+
+    public String getF_modele() {
+        return f_modele;
+    }
+
+    public void setF_modele(String f_modele) {
+        this.f_modele = f_modele;
     }
     
+    public BeanChargeListSousModele() {
+        imRef_Sous_Modele = new MRef_Sous_Modele();
+    }
+
 }

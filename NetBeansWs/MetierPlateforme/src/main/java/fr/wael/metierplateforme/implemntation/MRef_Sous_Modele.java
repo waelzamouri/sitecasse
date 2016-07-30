@@ -17,12 +17,31 @@ import java.util.List;
  * @author wael
  */
 public class MRef_Sous_Modele implements ImRef_Sous_Modele{
+    final IDaoRef_modele iDaoRef_modele;
 
     @Override
-    public List<Ref_Sous_Modele> getSousModelByModel(String nom_model) {
-        IDaoRef_modele iDao_ref_modeles = new DaoRef_modele();
-        List<Ref_modele> ref_modeles = iDao_ref_modeles.getAllRef_modele();
-        return null;
+    public List<Ref_Sous_Modele> getSousModelByModel(long id_modele) {
+       
+       final Ref_modele ref_modele_trouve = iDaoRef_modele.getRef_modeleById(id_modele);
+       return ref_modele_trouve.getRef_Sous_Modele();
     }
+
+    @Override
+    public long getIdModelByName(String name_modele) {
+       List<Ref_modele> ref_modeles = iDaoRef_modele.getAllRef_modele();
+       for(Ref_modele ref : ref_modeles){
+           if(ref.getNom_modele().equals(name_modele)){
+               return ref.getId_ref_modele();
+           }
+       }
+       return 0;
+    }
+    
+
+    public MRef_Sous_Modele() {
+        iDaoRef_modele = new DaoRef_modele();
+    }
+    
+    
     
 }
