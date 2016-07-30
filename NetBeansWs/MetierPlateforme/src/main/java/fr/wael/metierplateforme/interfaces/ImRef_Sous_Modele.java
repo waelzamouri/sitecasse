@@ -5,13 +5,13 @@
  */
 package fr.wael.metierplateforme.interfaces;
 
-import fr.wael.model.Ref_modele;
+import fr.wael.model.Ref_Sous_Modele;
 import java.util.List;
 
 /**
  *
  * @author wael
  */
-public interface ImRef_Modele {
-    public List<Ref_modele> getModelesByMarque(long id_marque);
+public interface ImRef_Sous_Modele {
+    public List<Ref_Sous_Modele> getSousModelByModel(String nom_model);
 }

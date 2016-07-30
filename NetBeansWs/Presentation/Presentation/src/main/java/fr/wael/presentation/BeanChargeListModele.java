@@ -28,13 +28,30 @@ public class BeanChargeListModele implements Serializable {
 
     @ManagedProperty(value = "#{premierBean.f_marque}")
     private String f_marque;
+    
+    @ManagedProperty(value = "#{premierBean.id_marque}")
+    private String id_marque;
      
     public BeanChargeListModele() {
         imRef_Modele = new MRef_Modele();
         
     }
 
+    public String getId_marque() {
+        return id_marque;
+    }
+
+    public void setId_marque(String id_marque) {
+        this.id_marque = id_marque;
+    }
+
+
+    
+
+
     public List<Ref_modele> getRef_modele() {
+        ref_modele = imRef_Modele.getModelesByMarque(Long.parseLong(id_marque));
+        
         return ref_modele;
     }
 
@@ -48,7 +65,7 @@ public class BeanChargeListModele implements Serializable {
 
     public void setF_marque(String f_marque) {
         this.f_marque = f_marque;
-        ref_modele = imRef_Modele.getModelesByMarque(f_marque);
+        
         
     }
     

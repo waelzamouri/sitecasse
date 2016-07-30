@@ -19,20 +19,11 @@ import java.util.List;
 public class MRef_Modele implements ImRef_Modele {
 
     @Override
-    public List<Ref_modele> getModelesByMarque(String nom_marque) {
-        Ref_Marque ref_marque_trouve = null;
+    public List<Ref_modele> getModelesByMarque(long id_marque) {
         final IDaoRef_Marque iDaoRef_Marque = new DaoRef_Marque();
-        List<Ref_Marque> ref_Marques = iDaoRef_Marque.getAllRef_Marque();
-        for (Ref_Marque ref_Marque : ref_Marques) {
-            if (ref_Marque.getNom_marque().equals(nom_marque)) {
-                ref_marque_trouve = ref_Marque;
-            }
-        }
-        if(ref_marque_trouve != null){
-            return ref_marque_trouve.getRef_modele();
-        }else{
-            return null;
-        }
+        Ref_Marque ref_marque_trouve = null;
+        ref_marque_trouve = iDaoRef_Marque.getRef_MarqueById(id_marque);
+        return ref_marque_trouve.getRef_modele();
     }
 
 }

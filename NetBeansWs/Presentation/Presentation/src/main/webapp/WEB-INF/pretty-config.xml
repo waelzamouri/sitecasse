@@ -3,30 +3,35 @@
                xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
                       http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 
-    
+ 
+   
     <url-mapping id="rech">
         <pattern value="/recherche" />
-        <view-id value="/faces/pages/accueil/marquelist.xhtml" />
+        <view-id value="/faces/pages/accueil/affiche-sous-modele.xhtml" />
         
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
-       <url-mapping id="affiche-marque">
+    <url-mapping id="affiche-marque">
         <pattern value="/affiche-marque" />
         <view-id value="/faces/pages/accueil/affiche-marque.xhtml" />
         
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
-      <url-mapping id="model-list">
+    <url-mapping id="model-list">
         <pattern value="/modele-list" />
         <view-id value="/faces/pages/accueil/modele-list.xhtml" />
         
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
-     <url-mapping id="zone-list">
+    <url-mapping id="zone-list">
         <pattern value="/zone-list" />
         <view-id value="/faces/pages/accueil/zone-list.xhtml" />
         
         <!--<action>#{premierBean.toRecherche()}</action>-->
+    </url-mapping>
+    <url-mapping id="home">
+        <pattern value="/" />
+        <view-id value="/faces/index.xhtml"/>
     </url-mapping>
 
 </pretty-config>

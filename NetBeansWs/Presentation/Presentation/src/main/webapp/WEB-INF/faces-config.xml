@@ -11,7 +11,7 @@
         <navigation-case>
             <from-action>#{premierBean.toRecherche()}</from-action>
             <from-outcome>rech</from-outcome>
-            <to-view-id>/pages/accueil/marquelist.xhtml</to-view-id>
+            <to-view-id>/pages/accueil/affiche-sous-modele.xhtml</to-view-id>
             <redirect />
         </navigation-case>
         <navigation-case>

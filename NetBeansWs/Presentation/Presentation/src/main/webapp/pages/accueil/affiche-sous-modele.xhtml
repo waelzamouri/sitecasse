@@ -7,7 +7,7 @@
 
     <ui:composition template="../../resources/template/layout/commun/layout.xhtml">
         <ui:define name="content">
-            <h:body style="background: url(../../resources/images/ciel.jpg)">
+            <h:body >
                 <!--<link rel="stylesheet" type="text/css" href="../../resources/css/style.css" />-->
 
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/journal/bootstrap.min.css" />
@@ -20,10 +20,16 @@
 
 
                 <div class="container">
-                    <!--                    <ui:insert name="module-marque-list" >
-                                            <ui:include src="../../resources/template/fragment/commun/composants/module-marque-list.xhtml" />
-                                        </ui:insert>-->
-                   
+                    <div class="well">
+                        <div class="box">
+                            <h:form id="form-sous-model">
+                                <h:dataTable value="" var="" >
+                                    
+                                </h:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+
                 </div>
 
 
