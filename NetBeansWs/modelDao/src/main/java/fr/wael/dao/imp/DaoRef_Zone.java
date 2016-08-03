@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.wael.dao.interfaces;
+package fr.wael.dao.imp;
 
 import fr.wael.dao.imp.*;
+import fr.wael.dao.interfaces.IDaoRef_Zone;
 import fr.wael.dao.interfaces.IDaoRef_Zone;
 import fr.wael.model.Ref_Zone;
 import fr.wael.util.HibernateUtil;

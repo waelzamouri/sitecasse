@@ -5,10 +5,21 @@
  */
 package fr.wael.presentation;
 
+import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
 /**
  *
  * @author wael
  */
-public class BeanChargeZone {
-    
+@ManagedBean
+@RequestScoped
+public class BeanChargeZone implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    public BeanChargeZone() {
+    }
+
 }

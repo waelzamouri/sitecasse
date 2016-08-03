@@ -24,7 +24,7 @@ public class DaoRef_Piece implements IDaoRef_Piece {
 
     @Override
     public Ref_Piece getRef_PieceById(Long id_ref_Piece) {
-        
+
         final Ref_Piece ref_PieceReturn = (Ref_Piece) session.get(Ref_Piece.class, id_ref_Piece);
 
         return ref_PieceReturn;
@@ -75,6 +75,11 @@ public class DaoRef_Piece implements IDaoRef_Piece {
 
     public DaoRef_Piece() {
         session = HibernateUtil.getSession();
+    }
+
+    @Override
+    public List<Ref_Piece> geRef_PieceByNombre(int nbRef_Piece) {
+        return session.createCriteria(Ref_Piece.class).list().subList(0, nbRef_Piece);
     }
 
 }

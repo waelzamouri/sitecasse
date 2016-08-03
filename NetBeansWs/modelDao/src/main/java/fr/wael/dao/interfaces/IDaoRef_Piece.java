@@ -21,5 +21,7 @@ public interface IDaoRef_Piece {
     public List<Ref_Piece> getAllRef_Piece();
 
     public void deleteRef_Piece(Ref_Piece avis);
+    
+    public List<Ref_Piece> geRef_PieceByNombre(int nbRef_Piece);
 
 }
