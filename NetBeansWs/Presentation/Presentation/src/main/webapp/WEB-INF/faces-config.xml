@@ -20,6 +20,12 @@
             <to-view-id>/pages/accueil/affiche-marque.xhtml</to-view-id>
             <redirect />
         </navigation-case>
+        <navigation-case>
+            <from-action>#{premierBean.toModele()}</from-action>
+            <from-outcome>model-list</from-outcome>
+            <to-view-id>/pages/accueil/modele-list.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/pages/accueil/affiche-marque.xhtml</from-view-id>
@@ -29,7 +35,7 @@
             </from-action>
             <from-outcome>model-list</from-outcome>
             <to-view-id>/pages/accueil/modele-list.xhtml</to-view-id>
-             <redirect />
+            <redirect />
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -40,7 +46,7 @@
             </from-action>
             <from-outcome>sous-modele</from-outcome>
             <to-view-id>/pages/accueil/affiche-sous-modele.xhtml</to-view-id>
-             <redirect />
+            <redirect />
         </navigation-case>
     </navigation-rule>
     
