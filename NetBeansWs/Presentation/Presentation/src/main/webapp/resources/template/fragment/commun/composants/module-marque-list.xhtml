@@ -24,7 +24,7 @@
                                 <!--<center><p class="label label-default">#{m.nom_marque}</p></center>-->
 
 
-                                <center><h:commandButton class="btn3d btn btn-magick" action="#{premierBean.toModele()}" value="#{m.nom_marque}">
+                                <center><h:commandButton class="btn3d btn btn-info" action="#{premierBean.toModele()}" value="#{m.nom_marque}">
                                         <f:param name="marque" value="#{m.nom_marque}" />
                                         <f:param name="idmarque" value="#{m.id_ref_marque}" />
                                     </h:commandButton></center>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <!--<center><a href="" class="btn3d btn btn-info">Plus de Marques   <span class="glyphicon glyphicon-plus"></span></a></center>-->
-                            <center> <h:commandLink action="#{premierBean.toAfficheMarque()}"  class="btn3d btn btn-info" >Plus de Marques  <h:outputText class="glyphicon glyphicon-plus" /></h:commandLink></center>
+                            <center> <h:commandLink action="#{premierBean.toAfficheMarque()}"  class="btn3d btn btn-warning" >Plus de Marques  <h:outputText class="glyphicon glyphicon-plus" /></h:commandLink></center>
                         </div>
                     </div>
 

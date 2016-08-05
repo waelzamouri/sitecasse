@@ -18,14 +18,15 @@
                     <legend/>
                     <div class="row">
                         <ui:repeat value="#{beanModPieceList.ref_pieces}" var="p">
-                            <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="col-md-3 col-sm-4 col-xs-5">
                                 <!--<strong><h5 class="text-center"><mark><span class="glyphicon glyphicon-ok"></span> #{p.nom_piece}  </mark></h5></strong>-->
-                                <strong><h5><mark><h:commandLink  value="#{p.nom_piece}" action="#{premierBean.toAfficheMarque()}" >
-                                                <span class="glyphicon glyphicon-ok"></span>
+                                <h:commandLink  value="#{p.nom_piece}" action="#{premierBean.toAfficheMarque()}" class="btn3d btn btn-info">
+                                    <span class="glyphicon glyphicon-ok"></span>
 
-                                                <f:param name="piece" value="#{p.nom_piece}" />
-                                                <f:param name="idpece" value="#{p.id_ref_piece}" />
-                                            </h:commandLink> </mark></h5></strong>
+                                    <f:param name="piece" value="#{p.nom_piece}" />
+                                    <f:param name="idpece" value="#{p.id_ref_piece}" />
+                                </h:commandLink> 
+                                <br /><br />
                             </div>
                         </ui:repeat>
 
@@ -33,7 +34,7 @@
 
                     </div>
                     <div class="row">
-                        <center><h:commandLink class="btn3d btn btn-info" >plus de pièces <h:outputText class="glyphicon glyphicon-plus" />
+                        <center><h:commandLink class="btn3d btn btn-warning" >plus de pièces <h:outputText class="glyphicon glyphicon-plus" />
 
                             </h:commandLink></center>
                     </div>
