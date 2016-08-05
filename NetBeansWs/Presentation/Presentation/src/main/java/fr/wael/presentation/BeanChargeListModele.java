@@ -45,10 +45,6 @@ public class BeanChargeListModele implements Serializable {
         this.id_marque = id_marque;
     }
 
-
-    
-
-
     public List<Ref_modele> getRef_modele() {
         ref_modele = imRef_Modele.getModelesByMarque(Long.parseLong(id_marque));
         

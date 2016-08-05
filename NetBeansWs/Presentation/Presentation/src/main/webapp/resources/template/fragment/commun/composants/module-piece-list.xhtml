@@ -3,7 +3,8 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      >
+
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:component id="module-piece-list">
         <div class="well ">
             <div class="box">
@@ -18,7 +19,13 @@
                     <div class="row">
                         <ui:repeat value="#{beanModPieceList.ref_pieces}" var="p">
                             <div class="col-md-2 col-sm-3 col-xs-4">
-                                <strong><h5 class="text-center"><mark><span class="glyphicon glyphicon-ok"></span> #{p.nom_piece}  </mark></h5></strong>
+                                <!--<strong><h5 class="text-center"><mark><span class="glyphicon glyphicon-ok"></span> #{p.nom_piece}  </mark></h5></strong>-->
+                                <strong><h5><mark><h:commandLink  value="#{p.nom_piece}" action="#{premierBean.toAfficheMarque()}" >
+                                                <span class="glyphicon glyphicon-ok"></span>
+
+                                                <f:param name="piece" value="#{p.nom_piece}" />
+                                                <f:param name="idpece" value="#{p.id_ref_piece}" />
+                                            </h:commandLink> </mark></h5></strong>
                             </div>
                         </ui:repeat>
 
@@ -26,7 +33,9 @@
 
                     </div>
                     <div class="row">
-                        <center><h:commandLink class="btn3d btn btn-info" >Plus de pièces <h:outputText class="glyphicon glyphicon-plus" /></h:commandLink></center>
+                        <center><h:commandLink class="btn3d btn btn-info" >plus de pièces <h:outputText class="glyphicon glyphicon-plus" />
+
+                            </h:commandLink></center>
                     </div>
 
                 </h:form>

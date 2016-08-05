@@ -30,6 +30,7 @@ public class PremierBean implements Serializable {
     private String f_nom_piece;
     private String id_marque;
     private String id_modele;
+    private String id_piece;
 
     /**
      * Creates a new instance of PremierBean
@@ -38,6 +39,15 @@ public class PremierBean implements Serializable {
         imRef_Sous_Modele = new MRef_Sous_Modele();
     }
 
+    public String getId_piece() {
+        return id_piece;
+    }
+
+    public void setId_piece(String id_piece) {
+        this.id_piece = id_piece;
+    }
+
+    
     public String getId_marque() {
         return id_marque;
     }
@@ -99,6 +109,14 @@ public class PremierBean implements Serializable {
         f_modele = params.get("modele");
         id_modele = params.get("idmodele");
         return "sous-modele";
+    }
+
+    public String toAfficheMarque() {
+         Map<String, String> params
+                = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+         f_nom_piece = params.get("piece");
+         id_piece = params.get("idpiece");
+        return "affiche-marque";
     }
 
 }

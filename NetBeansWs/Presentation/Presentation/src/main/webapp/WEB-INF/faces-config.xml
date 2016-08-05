@@ -15,7 +15,7 @@
             <redirect />
         </navigation-case>
         <navigation-case>
-            <from-action>#{beanChargeListMarque.toAfficheMarque()}</from-action>
+            <from-action>#{premierBean.toAfficheMarque()}</from-action>
             <from-outcome>affiche-marque</from-outcome>
             <to-view-id>/pages/accueil/affiche-marque.xhtml</to-view-id>
             <redirect />

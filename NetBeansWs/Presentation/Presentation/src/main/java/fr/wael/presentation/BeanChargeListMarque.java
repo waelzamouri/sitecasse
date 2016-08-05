@@ -41,8 +41,6 @@ public class BeanChargeListMarque implements Serializable {
     }
     
 
-    public String toAfficheMarque(){
-        return "affiche-marque";
-    }
+   
     
 }
