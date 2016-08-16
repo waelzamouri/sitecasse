@@ -10,6 +10,7 @@ import fr.wael.model.Ref_Marque;
 import fr.wael.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -24,7 +25,7 @@ public class DaoRef_Marque implements IDaoRef_Marque {
 
     @Override
     public Ref_Marque getRef_MarqueById(Long id_ref_Marque) {
-        
+
         final Ref_Marque ref_MarqueReturn = (Ref_Marque) session.get(Ref_Marque.class, id_ref_Marque);
 
         return ref_MarqueReturn;
@@ -75,6 +76,20 @@ public class DaoRef_Marque implements IDaoRef_Marque {
 
     public DaoRef_Marque() {
         session = HibernateUtil.getSession();
+    }
+
+    @Override
+    public Long getIdMarqueByName(String nom_marque) {
+        if (nom_marque != null) {
+            Query query = session.createQuery("from Ref_Marque ref_mar where ref_mar.nom_marque = :nom_m");
+            query.setString("nom_m", nom_marque);
+            Ref_Marque ref_Marque = (Ref_Marque) query.uniqueResult();
+            return ref_Marque.getId_ref_marque();
+        } else {
+            return null;
+
+        }
+
     }
 
 }

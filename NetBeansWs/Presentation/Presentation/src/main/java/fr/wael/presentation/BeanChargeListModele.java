@@ -5,6 +5,8 @@
  */
 package fr.wael.presentation;
 
+import fr.wael.dao.imp.DaoRef_Marque;
+import fr.wael.dao.interfaces.IDaoRef_Marque;
 import fr.wael.metierplateforme.implemntation.MRef_Modele;
 import fr.wael.metierplateforme.interfaces.ImRef_Modele;
 import fr.wael.model.Ref_modele;
@@ -25,16 +27,17 @@ public class BeanChargeListModele implements Serializable {
     private static final long serialVersionUID = 1L;
     private ImRef_Modele imRef_Modele;
     private List<Ref_modele> ref_modele;
+    private IDaoRef_Marque iDaoRef_Marque;
 
     @ManagedProperty(value = "#{premierBean.f_marque}")
     private String f_marque;
-    
+
     @ManagedProperty(value = "#{premierBean.id_marque}")
     private String id_marque;
-     
+
     public BeanChargeListModele() {
         imRef_Modele = new MRef_Modele();
-        
+
     }
 
     public String getId_marque() {
@@ -46,8 +49,13 @@ public class BeanChargeListModele implements Serializable {
     }
 
     public List<Ref_modele> getRef_modele() {
+
+        iDaoRef_Marque = new DaoRef_Marque();
+        id_marque = iDaoRef_Marque.getIdMarqueByName(f_marque).toString();
+       
+
         ref_modele = imRef_Modele.getModelesByMarque(Long.parseLong(id_marque));
-        
+
         return ref_modele;
     }
 
@@ -61,9 +69,7 @@ public class BeanChargeListModele implements Serializable {
 
     public void setF_marque(String f_marque) {
         this.f_marque = f_marque;
-        
-        
+
     }
-    
 
 }

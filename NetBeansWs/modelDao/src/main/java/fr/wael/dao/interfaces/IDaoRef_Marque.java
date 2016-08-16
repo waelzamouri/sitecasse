@@ -21,5 +21,7 @@ public interface IDaoRef_Marque {
     public List<Ref_Marque> getAllRef_Marque();
 
     public void deleteRef_Marque(Ref_Marque avis);
+    
+    public Long getIdMarqueByName(String nom_marque);
 
 }

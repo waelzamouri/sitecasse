@@ -7,7 +7,7 @@
     <url-mapping id="sous-modele">
         <pattern value="/sous-modele-list" />
         <view-id value="/faces/pages/accueil/affiche-sous-modele.xhtml" />
-        
+        <query-param name="modele">#{premierBean.f_modele}</query-param>
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
    
@@ -18,15 +18,15 @@
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
     <url-mapping id="affiche-marque">
-        <pattern value="/affiche-marque" />
+        <pattern value="/liste-des-marque-vehicule" />
         <view-id value="/faces/pages/accueil/affiche-marque.xhtml" />
         
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
     <url-mapping id="model-list">
-        <pattern value="/modele-list" />
+        <pattern value="/liste-de-modeles" />
         <view-id value="/faces/pages/accueil/modele-list.xhtml" />
-        
+         <query-param name="marque">#{premierBean.f_marque}</query-param>
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
  

@@ -32,6 +32,7 @@ public class BeanChargeListSousModele {
     private String f_modele;
 
     public List<Ref_Sous_Modele> getRef_Sous_Modeles() {
+        
         ref_Sous_Modeles = imRef_Sous_Modele.getSousModelByModel(Long.parseLong(id_modele));
         return ref_Sous_Modeles;
     }
