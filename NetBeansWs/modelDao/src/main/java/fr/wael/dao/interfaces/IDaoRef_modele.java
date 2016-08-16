@@ -21,5 +21,7 @@ public interface IDaoRef_modele {
     public List<Ref_modele> getAllRef_modele();
 
     public void deleteRef_modele(Ref_modele avis);
+    
+    public Long getIdModeleByName(String nom_modele);
 
 }

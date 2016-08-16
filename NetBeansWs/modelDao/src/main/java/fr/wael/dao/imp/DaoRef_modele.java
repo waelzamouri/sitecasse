@@ -10,6 +10,7 @@ import fr.wael.model.Ref_modele;
 import fr.wael.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -75,6 +76,18 @@ public class DaoRef_modele implements IDaoRef_modele {
 
     public DaoRef_modele() {
         session = HibernateUtil.getSession();
+    }
+
+    @Override
+    public Long getIdModeleByName(String nom_modele) {
+        
+        if(nom_modele != null){
+            Query query = session.createQuery("from Ref_modele ref_mod where ref_mod.nom_modele = :nom_m");
+            query.setString("nom_m", nom_modele);
+            final Ref_modele ref_modele = (Ref_modele) query.uniqueResult();
+            return ref_modele.getId_ref_modele();
+        }
+        return null ;
     }
 
 }

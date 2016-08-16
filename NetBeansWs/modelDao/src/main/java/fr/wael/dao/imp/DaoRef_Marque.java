@@ -83,7 +83,7 @@ public class DaoRef_Marque implements IDaoRef_Marque {
         if (nom_marque != null) {
             Query query = session.createQuery("from Ref_Marque ref_mar where ref_mar.nom_marque = :nom_m");
             query.setString("nom_m", nom_marque);
-            Ref_Marque ref_Marque = (Ref_Marque) query.uniqueResult();
+            final Ref_Marque ref_Marque = (Ref_Marque) query.uniqueResult();
             return ref_Marque.getId_ref_marque();
         } else {
             return null;
