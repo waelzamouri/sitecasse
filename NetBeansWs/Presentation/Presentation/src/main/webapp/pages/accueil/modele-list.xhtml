@@ -38,13 +38,18 @@
                                 <h:form id="form-marque-affiche">
                                     <ui:repeat var="m" value="#{beanChargeListModele.ref_modele}">
                                         <div class="col-md-2 col-sm-3 col-xs-6 pull-center">
-                                            <center><h:graphicImage library="images" class="img-rsponsive" style="max-height: 130px;padding: 15px;" name="#{m.nom_img_modele}" alt="#{m.nom_modele}"/></center>
+                                            <center>
+                                                <h:graphicImage library="images" class="img-rsponsive" style="max-height: 150px;padding: 15px;max-width: 150px;" name="#{m.nom_img_modele}" alt="#{m.nom_modele}">
+                                                   
+                                                </h:graphicImage>
+                                            </center>
                                             <!--<center><p class="label label-default">#{m.nom_modele}</p></center>-->
 
-                                            
+
                                             <center><h:commandButton class="btn3d btn btn-info" action="#{premierBean.toSousModele()}" value="#{m.nom_modele}">
                                                     <f:param name="modele" value="#{m.nom_modele}" />
                                                     <f:param name="idmodele" value="#{m.id_ref_modele}" />
+                                                     <f:param name="urlimage" value="#{m.nom_img_modele}" />
                                                 </h:commandButton></center>
                                         </div>
 

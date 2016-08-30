@@ -49,5 +49,16 @@
             <redirect />
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/pages/accueil/affiche-sous-modele.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>
+                #{premierBean.toZone()}
+            </from-action>
+            <from-outcome>zone</from-outcome>
+            <to-view-id>/pages/accueil/zone-list.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
     
 </faces-config>

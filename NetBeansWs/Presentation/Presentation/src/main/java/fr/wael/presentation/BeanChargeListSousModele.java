@@ -38,6 +38,7 @@ public class BeanChargeListSousModele {
         iDaoRef_modele = new DaoRef_modele();
         id_modele = iDaoRef_modele.getIdModeleByName(f_modele).toString();
         ref_Sous_Modeles = imRef_Sous_Modele.getSousModelByModel(Long.parseLong(id_modele));
+        
         return ref_Sous_Modeles;
     }
 

@@ -35,5 +35,10 @@
         <pattern value="/" />
         <view-id value="/faces/index.xhtml"/>
     </url-mapping>
+        <url-mapping id="zone">
+        <pattern value="/zone-liste" />
+        <view-id value="/faces/pages/accueil/zone-list.xhtml"/>
+        <query-param name="urlimage">#{premierBean.url_modele_img}</query-param>
+    </url-mapping>
 
 </pretty-config>

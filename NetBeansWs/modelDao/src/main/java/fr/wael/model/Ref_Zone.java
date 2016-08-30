@@ -37,6 +37,9 @@ public class Ref_Zone implements Serializable {
 
     @Column
     private String nom_zone;
+    
+     @Column
+    private String url_img_zone;
 
     /**
      * <!-- begin-user-doc -->
@@ -46,6 +49,15 @@ public class Ref_Zone implements Serializable {
         super();
     }
 
+    public String getUrl_img_zone() {
+        return url_img_zone;
+    }
+
+    public void setUrl_img_zone(String url_img_zone) {
+        this.url_img_zone = url_img_zone;
+    }
+
+    
     public Long getId_ref_zone() {
         return id_ref_zone;
     }

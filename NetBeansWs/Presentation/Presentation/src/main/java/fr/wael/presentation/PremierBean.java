@@ -12,7 +12,7 @@ import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
+
 import javax.faces.context.FacesContext;
 
 /**
@@ -31,6 +31,7 @@ public class PremierBean implements Serializable {
     private String id_marque;
     private String id_modele;
     private String id_piece;
+    private String url_modele_img;
 
     /**
      * Creates a new instance of PremierBean
@@ -38,6 +39,15 @@ public class PremierBean implements Serializable {
     public PremierBean() {
         imRef_Sous_Modele = new MRef_Sous_Modele();
     }
+
+    public String getUrl_modele_img() {
+        return url_modele_img;
+    }
+
+    public void setUrl_modele_img(String url_modele_img) {
+        this.url_modele_img = url_modele_img;
+    }
+    
 
     public String getId_piece() {
         return id_piece;
@@ -108,6 +118,7 @@ public class PremierBean implements Serializable {
                 = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         f_modele = params.get("modele");
         id_modele = params.get("idmodele");
+        url_modele_img = params.get("urlimage");
         return "sous-modele";
     }
 
@@ -117,6 +128,9 @@ public class PremierBean implements Serializable {
          f_nom_piece = params.get("piece");
          id_piece = params.get("idpiece");
         return "affiche-marque";
+    }
+    public String toZone(){
+        return "zone";
     }
 
 }
