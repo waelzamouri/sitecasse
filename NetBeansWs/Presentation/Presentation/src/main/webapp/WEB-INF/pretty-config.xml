@@ -40,5 +40,9 @@
         <view-id value="/faces/pages/accueil/zone-list.xhtml"/>
         <query-param name="urlimage">#{premierBean.url_modele_img}</query-param>
     </url-mapping>
+     <url-mapping id="piece-choix">
+        <pattern value="/choix-de-la-piece" />
+        <view-id value="/faces/pages/accueil/affiche-pieces.xhtml"/>
+    </url-mapping>
 
 </pretty-config>

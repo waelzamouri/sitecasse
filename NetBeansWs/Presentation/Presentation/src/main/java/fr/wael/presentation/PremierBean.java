@@ -31,6 +31,8 @@ public class PremierBean implements Serializable {
     private String id_marque;
     private String id_modele;
     private String id_sous_modele;
+    private String id_ref_zone;
+    private String nom_zone;
     private String nom_sous_modele;
     private String id_piece;
     private String url_modele_img;
@@ -40,6 +42,22 @@ public class PremierBean implements Serializable {
      */
     public PremierBean() {
         imRef_Sous_Modele = new MRef_Sous_Modele();
+    }
+
+    public String getId_ref_zone() {
+        return id_ref_zone;
+    }
+
+    public void setId_ref_zone(String id_ref_zone) {
+        this.id_ref_zone = id_ref_zone;
+    }
+
+    public String getNom_zone() {
+        return nom_zone;
+    }
+
+    public void setNom_zone(String nom_zone) {
+        this.nom_zone = nom_zone;
     }
 
     public String getUrl_modele_img() {
@@ -159,9 +177,13 @@ public class PremierBean implements Serializable {
             return "zone";
       
     }
-    public String toEnregistrement(){
-        
-        return null;
+    public String toPieceChoix() {
+         final Map<String, String> params
+                = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+         id_ref_zone = params.get("idzone");
+         nom_zone = params.get("nomzone");
+         
+        return "piece-choix";
     }
 
 }

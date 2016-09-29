@@ -11,6 +11,7 @@ and open the template in the editor.
 body{
     background: url(../../resources/images/ciel.jpg)
 }
+
 /* Boutton 3D effet */
 .btn3d {
     position:relative;
