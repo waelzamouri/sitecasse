@@ -42,10 +42,12 @@
                                             <!--<center><p class="label label-default">#{m.nom_marque}</p></center>-->
 
 
-                                            <center><h:commandButton class="btn3d btn btn-info" action="#{premierBean.toModele()}" value="#{m.nom_marque}">
+                                            <center>
+                                                <h:commandButton class="btn3d btn btn-info" action="#{premierBean.toModele()}" value="#{m.nom_marque}">
                                                     <f:param name="marque" value="#{m.nom_marque}" />
                                                     <f:param name="idmarque" value="#{m.id_ref_marque}" />
-                                                </h:commandButton></center>
+                                                </h:commandButton>
+                                            </center>
                                         </div>
 
                                     </ui:repeat>

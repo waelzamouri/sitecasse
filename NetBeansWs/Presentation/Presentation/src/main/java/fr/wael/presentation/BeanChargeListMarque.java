@@ -26,7 +26,7 @@ public class BeanChargeListMarque implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private IDaoRef_Marque iDaoRef_Marque;
-    List<Ref_Marque> ref_marques;
+    private List<Ref_Marque> ref_marques;
     
     public BeanChargeListMarque() {
         iDaoRef_Marque = new DaoRef_Marque();

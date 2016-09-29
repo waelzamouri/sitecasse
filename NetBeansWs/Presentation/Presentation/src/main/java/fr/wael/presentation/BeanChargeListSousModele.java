@@ -30,21 +30,21 @@ public class BeanChargeListSousModele {
 
     @ManagedProperty(value = "#{premierBean.id_modele}")
     private String id_modele;
-    
+
     @ManagedProperty(value = "#{premierBean.f_modele}")
     private String f_modele;
 
     public List<Ref_Sous_Modele> getRef_Sous_Modeles() {
-        iDaoRef_modele = new DaoRef_modele();
-        id_modele = iDaoRef_modele.getIdModeleByName(f_modele).toString();
-        ref_Sous_Modeles = imRef_Sous_Modele.getSousModelByModel(Long.parseLong(id_modele));
-        
+        if (!id_modele.equals("0")) {
+            iDaoRef_modele = new DaoRef_modele();
+            id_modele = iDaoRef_modele.getIdModeleByName(f_modele).toString();
+            ref_Sous_Modeles = imRef_Sous_Modele.getSousModelByModel(Long.parseLong(id_modele));
+        }
         return ref_Sous_Modeles;
     }
 
     public void setRef_Sous_Modeles(List<Ref_Sous_Modele> ref_Sous_Modeles) {
-        
-        
+
         this.ref_Sous_Modeles = ref_Sous_Modeles;
     }
 
@@ -63,7 +63,7 @@ public class BeanChargeListSousModele {
     public void setF_modele(String f_modele) {
         this.f_modele = f_modele;
     }
-    
+
     public BeanChargeListSousModele() {
         imRef_Sous_Modele = new MRef_Sous_Modele();
     }

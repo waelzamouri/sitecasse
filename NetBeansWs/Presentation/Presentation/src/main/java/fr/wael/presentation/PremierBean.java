@@ -30,6 +30,8 @@ public class PremierBean implements Serializable {
     private String f_nom_piece;
     private String id_marque;
     private String id_modele;
+    private String id_sous_modele;
+    private String nom_sous_modele;
     private String id_piece;
     private String url_modele_img;
 
@@ -47,7 +49,6 @@ public class PremierBean implements Serializable {
     public void setUrl_modele_img(String url_modele_img) {
         this.url_modele_img = url_modele_img;
     }
-    
 
     public String getId_piece() {
         return id_piece;
@@ -57,7 +58,6 @@ public class PremierBean implements Serializable {
         this.id_piece = id_piece;
     }
 
-    
     public String getId_marque() {
         return id_marque;
     }
@@ -98,6 +98,22 @@ public class PremierBean implements Serializable {
         this.f_nom_piece = f_nom_piece;
     }
 
+    public String getId_sous_modele() {
+        return id_sous_modele;
+    }
+
+    public void setId_sous_modele(String id_sous_modele) {
+        this.id_sous_modele = id_sous_modele;
+    }
+
+    public String getNom_sous_modele() {
+        return nom_sous_modele;
+    }
+
+    public void setNom_sous_modele(String nom_sous_modele) {
+        this.nom_sous_modele = nom_sous_modele;
+    }
+
     public String toRecherche() {
 
         this.id_modele = String.valueOf(imRef_Sous_Modele.getIdModelByName(f_modele));
@@ -110,6 +126,7 @@ public class PremierBean implements Serializable {
                 = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         f_marque = params.get("marque");
         id_marque = params.get("idmarque");
+
         return "model-list";
     }
 
@@ -123,14 +140,28 @@ public class PremierBean implements Serializable {
     }
 
     public String toAfficheMarque() {
-         Map<String, String> params
+        Map<String, String> params
                 = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-         f_nom_piece = params.get("piece");
-         id_piece = params.get("idpiece");
+        f_nom_piece = params.get("piece");
+        id_piece = params.get("idpiece");
         return "affiche-marque";
     }
-    public String toZone(){
-        return "zone";
+
+    public String toZone() {
+        Map<String, String> params
+                = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+        id_sous_modele = params.get("idsousmodele");
+        nom_sous_modele = params.get("nomsousmodele");
+        if (nom_sous_modele == null) {
+            nom_sous_modele = "---";
+        }
+     
+            return "zone";
+      
+    }
+    public String toEnregistrement(){
+        
+        return null;
     }
 
 }

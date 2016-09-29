@@ -3,8 +3,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
 
-          
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="../../resources/template/layout/commun/layout.xhtml">
         <ui:define name="content">
@@ -18,11 +19,12 @@
                 <!--<script type="text/javascript" src="../../resources/js/style.js" ></script>-->
                 <h:outputStylesheet library="css" name="style.css" />
                 <h:outputScript library="js" name="style.js" />
-
+            
                 <c:if test="#{empty beanChargeListSousModele.ref_Sous_Modeles}">
-                    <meta http-equiv="refresh" content="0; URL=zone-liste?urlimage=#{premierBean.url_modele_img}" />
+
+                    <meta http-equiv="refresh" content="1; URL=zone-liste?urlimage=#{premierBean.url_modele_img}" />
                 </c:if>
-                
+
                 <div class="container">
                     <div class="well">
                         <div class="box">
@@ -54,8 +56,11 @@
                                                     <td>#{sm.nom_sous_model}</td>
                                                     <td>#{sm.date_deb_prod}</td>
                                                     <td>#{sm.date_fin_prod}</td>
-                                                    <td><h:commandLink action="#{premierBean.toZone()}" class="btn3d btn btn-info" value="choisir"/>
-                                                        <param name="idsousmodel" value="#{sm.id_ref_sous_modele}" />
+                                                    <td>
+                                                        <h:commandLink action="#{premierBean.toZone()}" class="btn3d btn btn-info" value="✓">
+                                                            <f:param name="idsousmodele" value="#{sm.id_ref_sous_modele}" />
+                                                            <f:param name="nomsousmodele" value="#{sm.nom_sous_model}" />
+                                                        </h:commandLink>
                                                     </td>
                                                 </tr>
                                             </ui:repeat>

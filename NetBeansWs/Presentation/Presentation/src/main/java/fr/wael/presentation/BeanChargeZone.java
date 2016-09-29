@@ -5,7 +5,11 @@
  */
 package fr.wael.presentation;
 
+import fr.wael.dao.imp.DaoRef_Zone;
+import fr.wael.dao.interfaces.IDaoRef_Zone;
+import fr.wael.model.Ref_Zone;
 import java.io.Serializable;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -19,7 +23,21 @@ public class BeanChargeZone implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private IDaoRef_Zone iDaoRef_Zone;
+    private List<Ref_Zone> ref_Zones;
+    
     public BeanChargeZone() {
+        iDaoRef_Zone = new DaoRef_Zone();
+        ref_Zones = iDaoRef_Zone.getAllRef_Zone();
     }
+
+    public List<Ref_Zone> getRef_Zones() {
+        return ref_Zones;
+    }
+
+    public void setRef_Zones(List<Ref_Zone> ref_Zones) {
+        this.ref_Zones = ref_Zones;
+    }
+    
 
 }
