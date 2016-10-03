@@ -10,6 +10,7 @@ import fr.wael.model.Client;
 import fr.wael.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -75,6 +76,14 @@ public class DaoClient implements IDaoClient {
 
     public DaoClient() {
         session = HibernateUtil.getSession();
+    }
+
+    @Override
+    public Client getClientBymail(String mail) {
+        Query q = session.createQuery("from Client as client where client.mail=:m");
+        q.setParameter("m", mail);
+        
+        return (Client) q.uniqueResult();
     }
 
 }

@@ -20,4 +20,6 @@ public interface IDaoClient {
     public List<Client> getAllClient();
 
     public void deleteClient(Client avis);
+    
+    public Client getClientBymail(String mail);
 }

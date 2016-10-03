@@ -33,9 +33,9 @@
                                     <ui:repeat var="p" value="#{beanChargeZone.allPiecesByIdZone}">
                                         <div class="col-md-3 col-sm-4 col-xs-5">
                                <!--<strong><h5 class="text-center"><mark><span class="glyphicon glyphicon-ok"></span> #{p.nom_piece}  </mark></h5></strong>-->
-                                            <h:commandLink  value="#{p.nom_piece}"  class="btn3d btn btn-info">
+                                            <h:commandLink  value="#{p.nom_piece}"  class="btn3d btn btn-info" action="#{premierBean.toChoixInsCon()}">
                                                 <span class="glyphicon glyphicon-ok"></span>
-
+                                                
 
                                             </h:commandLink> 
                                             <br /><br />

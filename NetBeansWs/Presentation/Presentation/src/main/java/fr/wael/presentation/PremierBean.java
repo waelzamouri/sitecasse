@@ -185,5 +185,9 @@ public class PremierBean implements Serializable {
          
         return "piece-choix";
     }
+    public String toChoixInsCon(){
+        return "choix-con-ins";
+    }
+ 
 
 }

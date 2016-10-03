@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="../../resources/template/layout/commun/layout.xhtml">
+        <ui:define name="content">
+            <h:body >
+                <!--<link rel="stylesheet" type="text/css" href="../../resources/css/style.css" />-->
+
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/journal/bootstrap.min.css" />
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous" />
+                <!--<script type="text/javascript" src="../../resources/js/style.js" ></script>-->
+                <h:outputStylesheet library="css" name="style.css" />
+                <h:outputScript library="js" name="style.js" />
+
+
+                <!--                à définir-->
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="well">
+                                <div class="box">
+
+                                    <h:form class="form-horizontal" role="form" id="form-con">
+
+                                        <center><h3><span class="label label-default">Connectez vous à votre session</span></h3></center>
+                                        <div class="form-group">
+                                            <label for="mail">mail:</label>
+                                            <h:inputText class="form-control" id="mail" alt="Mail" value="#{connexion.mail}">
+
+                                            </h:inputText>
+
+                                            <!--                    <select class="form-control" id="marque">
+                                                                    <option>Peugeot</option>
+                                                                    <option>Renault</option>
+                                                                    <option>Mercedes</option>
+                                                                    <option>Wolswagen</option>
+                                                                </select>-->
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mdp">Mot de passe :</label>
+                                            <h:inputText class="form-control" id="mdp" alt="mot de passe" value="#{connexion.psw}"/>
+
+                                       
+                                        </div>
+
+                                        <center>
+                                            <!--<button type="submit" class="btn3d btn btn-danger">Trouver  <span class="glyphicon glyphicon glyphicon-eye-open"></span></button></center>-->
+
+                                            <h:commandLink  class="btn3d btn btn-warning" action="#{connexion.toTryConnect()}">Connexion   <h:outputText class="glyphicon glyphicon glyphicon-eye-open" /></h:commandLink></center>
+                                        <!--<h:link outcome="rech" value="Trouver"  class="btn3d btn btn-danger"></h:link></center>-->
+
+                                    </h:form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="well">
+                                <div class="box">
+                                    <h:form id="senregistrer">
+                                        <center>
+                                            <h:graphicImage library="images" name="icone-enregistrement.png" />
+                                            <br /><br /><br />
+                                            <p>Repmplissez rapidement le formulaire d'inscription à fin de valider votre demande de recherche de pieces détachés</p><br />
+                                            <h:commandButton value="S'enregistrer" class="btn btn3d btn-danger" />
+                                        </center>
+                                    </h:form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </h:body>
+
+
+        </ui:define>
+    </ui:composition>
+</html>
