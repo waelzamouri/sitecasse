@@ -18,30 +18,10 @@
                 <!--<script type="text/javascript" src="../../resources/js/style.js" ></script>-->
                 <h:outputStylesheet library="css" name="style.css" />
                 <h:outputScript library="js" name="style.js" />
-
-                <c:if test="#{!connexion.connected}">
-                    <meta http-equiv="refresh" content="0; URL=home" />
-                </c:if>
+                
+                
                 <!--                à définir-->
-                <div class="container">
-                    <div class="row">
-                        <div class="well">
-                            <div class="box">
-                                <center>
-                                    <h2>Demande en cours:</h2>
-                                    <h4>Marque :</h4><p>#{premierBean.f_marque}</p>                               
-                                    <h4>Modele :</h4><p>#{premierBean.f_modele}</p>
-                                    <h4>
-                                    <legend />
-
-                                    <h2>Profil :</h2>
-                                    <h4>nom :</h4><p>#{connexion.mail}</p><br />
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <h2>Vous etes déconnecté</h2>
             </h:body>
 
 

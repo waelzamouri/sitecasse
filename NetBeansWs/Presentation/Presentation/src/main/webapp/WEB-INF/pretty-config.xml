@@ -32,7 +32,7 @@
     </url-mapping>
  
     <url-mapping id="home">
-        <pattern value="/" />
+        <pattern value="/home" />
         <view-id value="/faces/index.xhtml"/>
     </url-mapping>
     <url-mapping id="zone">
@@ -51,6 +51,10 @@
     <url-mapping id="my-commande">
         <pattern value="/ma-commande" />
         <view-id value="/faces/pages/accueil/my-commande.xhtml"/>
+    </url-mapping>
+    <url-mapping id="deconnexion">
+        <pattern value="/deconnecter" />
+        <view-id value="/faces/pages/accueil/deconnexion.xhtml"/>
     </url-mapping>
 
 

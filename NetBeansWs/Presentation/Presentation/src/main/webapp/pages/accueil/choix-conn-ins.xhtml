@@ -18,7 +18,7 @@
                 <!--<script type="text/javascript" src="../../resources/js/style.js" ></script>-->
                 <h:outputStylesheet library="css" name="style.css" />
                 <h:outputScript library="js" name="style.js" />
-
+               
 
                 <!--                à définir-->
                 <div class="container">
@@ -46,9 +46,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="mdp">Mot de passe :</label>
-                                            <h:inputText class="form-control" id="mdp" alt="mot de passe" value="#{connexion.psw}"/>
-
-                                       
+                                            
+                                            <h:inputSecret value="#{connexion.psw}" id="mdp" class="form-control" />
                                         </div>
 
                                         <center>

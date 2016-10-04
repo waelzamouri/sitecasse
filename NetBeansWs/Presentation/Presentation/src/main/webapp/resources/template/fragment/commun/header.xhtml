@@ -5,7 +5,9 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       >
     <body>
+
         <ui:composition>
+
             <nav class="navbar navbar-default">
 
                 <div class="container">
@@ -43,23 +45,53 @@
                             <div class="row">
 
                                 <div class="col-md-2 col-xs-2 col-sm-2">
-                                    <h:graphicImage library="images" name="logo-test.png"  style="max-width : 80px;max-height: 80px;"/>
+                                    <h:graphicImage library="images" name="logo-test.png"  style="max-width : 70px;max-height: 70px;"/>
                                 </div>
                                 <div class="col-md-10 col-xs-10 col-sm-10">
                                     <h4 style="margin-left: 30px"><span class="label label-warning" >  Comparateur de pieces détachés pour auto   </span></h4>
 
                                     <p   class="text-info" href="#" style="margin-left: 30px;font-size: 80%;" ><span class="glyphicon glyphicon-info-sign"></span>   Jusqu'à <span class="badge">5</span> devis pour votre pièce</p>
                                 </div>
-                               
+
                             </div> 
 
                         </div>
                     </div> 
                     <div class="collapse navbar-collapse" id="navbar-collapse-2">
-                        <ul class="nav navbar-nav navbar-right" style="padding-left: 10px;">
-                            <li>                 <center><button type="button" class="btn3d btn btn-info btn-md " ><span class="glyphicon glyphicon-user"></span>  Connexion   </button></center>
-                                <center> <a href="#">Ouvrir un compte  ? </a></center>       </li>
-                        </ul>
+                        <c:if test="#{!connexion.connected}">
+
+                            <h:form id="bardroit" class="pull-right">
+                                <h:commandLink  class="btn3d btn btn-default btn-sm" value="Marques" />
+                                <h:commandLink  class="btn3d btn btn-default btn-sm" value="Modeles" />
+                                <ul class="nav navbar-nav navbar-right" style="padding-left: 10px;">
+
+                                    <li>                 
+                                        <center><button type="button" class="btn3d btn btn-info btn-sm " ><span class="glyphicon glyphicon-user"></span>  Connexion   </button></center>
+                                        <center> <a href="#" style="font-size: 80%;">Ouvrir un compte  ? </a></center>       </li>
+                                </ul>
+                            </h:form>
+                        </c:if>
+                        <c:if test="#{connexion.connected}">
+                            <div class="nav navbar-nav navbar-right">
+                                <h:form id="identifiant">
+                                    
+                                    <center>
+                                       
+                                        <h:commandLink class="btn btn3d btn-default btn-sm">
+                                            <span class="glyphicon glyphicon-user"> #{connexion.prenom} </span>
+                                        </h:commandLink>
+                                        <h:commandLink class="btn btn3d btn-info btn-sm" >
+                                            <span class="glyphicon glyphicon-list-alt"> Mes demandes</span>
+                                        </h:commandLink>
+
+                                        <h:commandLink class="btn btn3d btn-danger btn-sm" action="#{connexion.deconncter()}">
+                                            <span class="glyphicon glyphicon-off"> Déconnecter</span>
+                                        </h:commandLink>
+                                    </center>
+                                </h:form>
+                            </div>
+
+                        </c:if>
                     </div>
                 </div>
 

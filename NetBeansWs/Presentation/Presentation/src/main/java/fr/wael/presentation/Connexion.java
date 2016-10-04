@@ -27,9 +27,28 @@ public class Connexion implements Serializable {
     private String mail;
     private String psw;
     private boolean connected;
+    private String nom;
+    private String prenom;
 
     public Connexion() {
         imClient = new MClient();
+        connected = false;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     public String getMail() {
@@ -48,10 +67,21 @@ public class Connexion implements Serializable {
         this.psw = psw;
     }
 
+    public boolean isConnected() {
+        return connected;
+    }
+
+    public void setConnected(boolean connected) {
+        this.connected = connected;
+    }
+    
+
     private boolean verifieCon() {
         client = imClient.verifConnection(mail, psw);
         connected = false;
         if(client != null){
+            nom = client.getNom();
+            prenom = client.getPrenom();
             connected = true;            
         }        
         return connected;
@@ -65,6 +95,10 @@ public class Connexion implements Serializable {
         return "choix-con-ins";
        
     }
-    
+    public String deconncter(){
+        connected = false;
+        client = null;
+        return "deconnecter";
+    }
 
 }
