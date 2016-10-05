@@ -19,7 +19,7 @@
                 <!--<script type="text/javascript" src="../../resources/js/style.js" ></script>-->
                 <h:outputStylesheet library="css" name="style.css" />
                 <h:outputScript library="js" name="style.js" />
-            
+
                 <c:if test="#{empty beanChargeListSousModele.ref_Sous_Modeles}">
 
                     <meta http-equiv="refresh" content="1; URL=zone-liste?urlimage=#{premierBean.url_modele_img}" />
@@ -27,49 +27,74 @@
 
                 <div class="container">
                     <div class="well">
-                        <div class="box">
-                            <div class="row">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="box">
+                                    <center>
+                                       
 
-                                <div class="col-md-12">
-                                    <h3><center><span class="label label-default">Affinez votre modèle de vehicule</span></center></h3>
-                                    <br />
-                                    <legend />
+                                        <h:graphicImage library="images" name="#{premierBean.url_modele_img}" class="img-rsponsive" style="max-height: 130px;padding: 15px;"/><br />
+                                        <strong>Marque : </strong><p class="bg-info">#{premierBean.f_marque}</p>
+                                        <strong>Modèle : </strong><p class="bg-info">#{premierBean.f_modele}</p>
+                                        <c:if test="#{not empty premierBean.f_nom_piece}">
+                                            <strong>Pièce recherchée : </strong><p class="bg-info">#{premierBean.f_nom_piece}</p>
+                                        </c:if>
+                                    </center>
                                 </div>
                             </div>
-                            <div class="row">
-                                <h:form id="form-sous-model">
+                            <div class="col-md-9">
+                                <div class="box">
+                                    <div class="row">
 
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Modèle</th>
-                                                <th>Début production</th>
-                                                <th>Fin production</th>
-                                                <th>Choix</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <ui:repeat value="#{beanChargeListSousModele.ref_Sous_Modeles}" var="sm">
-                                                <tr>
-                                                    <th scope="row">#{sm.id_ref_sous_modele}</th>
-                                                    <td>#{sm.nom_sous_model}</td>
-                                                    <td>#{sm.date_deb_prod}</td>
-                                                    <td>#{sm.date_fin_prod}</td>
-                                                    <td>
-                                                        <h:commandLink action="#{premierBean.toZone()}" class="btn3d btn btn-info" value="✓">
-                                                            <f:param name="idsousmodele" value="#{sm.id_ref_sous_modele}" />
-                                                            <f:param name="nomsousmodele" value="#{sm.nom_sous_model}" />
-                                                        </h:commandLink>
-                                                    </td>
-                                                </tr>
-                                            </ui:repeat>
-                                        </tbody>
-                                    </table>
-                                </h:form>
+                                        <div class="col-md-12">
+                                            <h3><center><span class="label label-default">Affinez votre modèle de vehicule</span></center></h3>
+                                            <br />
+                                            <legend />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h:form id="form-sous-model">
+
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Modèle</th>
+                                                        <th>Début production</th>
+                                                        <th>Fin production</th>
+                                                        <th>Choix</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <ui:repeat value="#{beanChargeListSousModele.ref_Sous_Modeles}" var="sm">
+                                                        <tr>
+                                                            <th scope="row">#{sm.id_ref_sous_modele}</th>
+                                                            <td>#{sm.nom_sous_model}</td>
+                                                            <td>#{sm.date_deb_prod}</td>
+                                                            <td>#{sm.date_fin_prod}</td>
+                                                            <td>
+                                                                <h:commandLink action="#{premierBean.toZone()}" class="btn3d btn btn-info" value="✓">
+                                                                    <f:param name="idsousmodele" value="#{sm.id_ref_sous_modele}" />
+                                                                    <f:param name="nomsousmodele" value="#{sm.nom_sous_model}" />
+                                                                </h:commandLink>
+                                                            </td>
+                                                        </tr>
+                                                    </ui:repeat>
+                                                </tbody>
+                                            </table>
+                                        </h:form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <ui:insert name="module-recherche-inline" >
+                                <ui:include src="../../resources/template/fragment/commun/composants/module-recherche-inline.xhtml" />
+                            </ui:insert>
+                        </div>
+
                     </div>
+
 
                 </div>
 

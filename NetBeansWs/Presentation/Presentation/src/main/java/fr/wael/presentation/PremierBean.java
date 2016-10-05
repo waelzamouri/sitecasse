@@ -36,6 +36,7 @@ public class PremierBean implements Serializable {
     private String nom_sous_modele;
     private String id_piece;
     private String url_modele_img;
+    private String url_marque_img;
 
     /**
      * Creates a new instance of PremierBean
@@ -132,6 +133,14 @@ public class PremierBean implements Serializable {
         this.nom_sous_modele = nom_sous_modele;
     }
 
+    public String getUrl_marque_img() {
+        return url_marque_img;
+    }
+
+    public void setUrl_marque_img(String url_marque_img) {
+        this.url_marque_img = url_marque_img;
+    }
+
     public String toRecherche() {
 
         this.id_modele = String.valueOf(imRef_Sous_Modele.getIdModelByName(f_modele));
@@ -144,7 +153,8 @@ public class PremierBean implements Serializable {
                 = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         f_marque = params.get("marque");
         id_marque = params.get("idmarque");
-
+        url_marque_img = params.get("urlmarque");
+        //System.out.println(url_marque_img);
         return "model-list";
     }
 

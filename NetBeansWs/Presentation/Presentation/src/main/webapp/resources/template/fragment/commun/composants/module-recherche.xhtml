@@ -6,46 +6,30 @@
       xmlns:o="http://omnifaces.org/ui"
       xmlns:of="http://omnifaces.org/functions"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <ui:component id="module-recherche">
+    <ui:component id="module-recherche-inline">
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-        
+
 
         <h:form class="form-horizontal" role="form" id="form-rech">
             <div class="box">
-                <center><h3><span class="label label-default">Recherche rapide :</span></h3></center>
+                <center><h3><span class="label label-default">Recherche rapide de pièce auto :</span></h3></center>
                 <div class="form-group">
                     <label for="marque">Marque</label>
-                    <h:inputText class="form-control" id="marque" alt="Marque" value="#{premierBean.f_marque}">
-                       
-                    </h:inputText>
-
-                    <!--                    <select class="form-control" id="marque">
-                                            <option>Peugeot</option>
-                                            <option>Renault</option>
-                                            <option>Mercedes</option>
-                                            <option>Wolswagen</option>
-                                        </select>-->
+                    <h:inputText class="form-control" id="marque" alt="Marque" value="#{premierBean.f_marque}" />
                 </div>
                 <div class="form-group">
                     <label for="model">Modèle</label>
                     <h:inputText class="form-control" id="modele" alt="marque" value="#{premierBean.f_modele}"/>
-
-                    <!--                                        <select class="form-control" id="model">
-                                                                <option>Clio</option>
-                                                                <option>Saphir</option>
-                                                                <option>espace</option>
-                                                                <option>laguna</option>
-                                                            </select>-->
                 </div>
                 <div class="form-group">
                     <label for="piece">Pièce</label>
                     <h:inputText   class="form-control" id="piece"  value="#{premierBean.f_nom_piece}"/>
                 </div>
                 <center>
-                    <!--<button type="submit" class="btn3d btn btn-danger">Trouver  <span class="glyphicon glyphicon glyphicon-eye-open"></span></button></center>-->
+                    <h:commandLink action="#{premierBean.toRecherche()}"  class="btn3d btn btn-warning btn-sm" ><h:outputText class="glyphicon glyphicon-search" /> Lancer ma recherche
+                    </h:commandLink>
+                </center>
 
-                    <h:commandLink action="#{premierBean.toRecherche()}"  class="btn3d btn btn-warning" >Trouver   <h:outputText class="glyphicon glyphicon glyphicon-eye-open" /></h:commandLink></center>
-                <!--<h:link outcome="rech" value="Trouver"  class="btn3d btn btn-danger"></h:link></center>-->
             </div>
         </h:form>
     </ui:component>

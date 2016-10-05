@@ -29,10 +29,13 @@
                         <div class="col-md-3">
                             <div class="well">
                                 <div class="box">
-                                    <center><h3><span class="label label-default">#{premierBean.f_marque} #{premierBean.f_modele}</span></h3>
+                                    <center>
+                                       
 
-                                        <h:graphicImage library="images" name="#{premierBean.url_modele_img}" class="img-rsponsive" style="max-height: 130px;padding: 15px;"/>
-                                        <p><strong>Phase : </strong></p><h4>#{premierBean.nom_sous_modele}</h4>
+                                        <h:graphicImage library="images" name="#{premierBean.url_modele_img}" class="img-rsponsive" style="max-height: 130px;padding: 15px;"/><br />
+                                        <strong>Marque : </strong><p class="bg-info">#{premierBean.f_marque}</p>
+                                        <strong>Modèle : </strong><p class="bg-info">#{premierBean.f_modele}</p>
+                                        
                                     </center>
                                 </div>
                             </div>

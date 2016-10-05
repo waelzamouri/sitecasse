@@ -25,18 +25,45 @@
                 <!--                à définir-->
                 <div class="container">
                     <div class="row">
-                        <div class="well">
-                            <div class="box">
-                                <center>
-                                    <h2>Demande en cours:</h2>
-                                    <h4>Marque :</h4><p>#{premierBean.f_marque}</p>                               
-                                    <h4>Modele :</h4><p>#{premierBean.f_modele}</p>
-                                    <h4>
-                                    <legend />
+                        <div class="col-md-6">
+                            <div class="well">
+                                <div class="box">
+                                    <center>
+                                        <h4 class="bg-success">Demande en cours :</h4>
+                                        <h:graphicImage library="images" name="#{premierBean.url_modele_img}" class="img-rsponsive" style="max-height: 130px;padding: 15px;"/><br />
+                                        <strong>Marque : </strong><p class="bg-info">#{premierBean.f_marque}</p>
+                                        <strong>Modèle : </strong><p class="bg-info">#{premierBean.f_modele}</p>
+                                        <c:if test="#{not empty premierBean.f_nom_piece}">
+                                            <strong>Pièce recherchée : </strong><p class="bg-info">#{premierBean.f_nom_piece}</p>
+                                        </c:if>
+                                        <c:if test="#{not empty premierBean.nom_sous_modele}">
+                                            <strong>Détails modèle : </strong><p class="bg-info">#{premierBean.nom_sous_modele}</p>
+                                        </c:if>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="well">
+                                <div class="box">
+                                    <center>
+                                        <br/><br />
+                                        <h:form id="form-valide">
+                                            <label><input id="validation" type="checkbox" value=""><strong> Je valide valide les conditions générale du site.</strong></input></label>
+                                            <br /><br /><br />
+                                            <h:commandLink class="btn3d btn-primary btn-lg" >
+                                                <h:outputText class="glyphicon glyphicon-check" /> Envoyer
+                                            </h:commandLink>
+                                            <h:commandLink class="btn3d btn-success btn-lg"  >
+                                                <h:outputText class="glyphicon glyphicon-edit" /> Modifier
+                                            </h:commandLink>
+                                            
+                                            <br /><br /><br />
 
-                                    <h2>Profil :</h2>
-                                    <h4>nom :</h4><p>#{connexion.mail}</p><br />
-                                </center>
+                                        </h:form>
+
+                                    </center>
+                                </div>
                             </div>
                         </div>
                     </div>

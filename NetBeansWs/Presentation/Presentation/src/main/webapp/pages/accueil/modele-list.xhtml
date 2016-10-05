@@ -4,7 +4,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
 
 
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:composition template="../../resources/template/layout/commun/layout.xhtml">
         <ui:define name="content">
@@ -26,36 +27,59 @@
                         <!--                    <ui:insert name="module-marque-list" >
                                                 <ui:include src="../../resources/template/fragment/commun/composants/module-marque-list.xhtml" />
                                             </ui:insert>-->
-                        <div class="box">
-                            <div class="row">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="box">
+                                    <center>
+                                        
 
-                                <div class="col-md-12">
-                                    <h3><center><span class="label label-default">Choisissez le modele du véhicule</span></center></h3>
+                                        <h:graphicImage library="images" name="#{premierBean.url_marque_img}" class="img-rsponsive" style="max-height: 130px;padding: 15px;" /><br />
+                                        <strong>Marque : </strong><p class="bg-info">#{premierBean.f_marque}</p>
+                                        <c:if test="#{not empty premierBean.f_nom_piece}">
+                                            <strong>Pièce recherchée : </strong><p class="bg-info">#{premierBean.f_nom_piece}</p>
+                                        </c:if>
+                                    </center>
+                                </div>
+
+                            </div>
+                            <div class="col-md-9">
+                                <div class="box">
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <h3><center><span class="label label-default">Choisissez le modele du véhicule</span></center></h3>
+                                        </div>
+                                    </div>
+                                    <legend/>
+                                    <div class="row">
+                                        <h:form id="form-marque-affiche">
+                                            <ui:repeat var="m" value="#{beanChargeListModele.ref_modele}">
+                                                <div class="col-md-2 col-sm-3 col-xs-6 pull-center">
+                                                    <center>
+                                                        <h:graphicImage library="images" class="img-rsponsive" style="max-height: 150px;padding: 15px;max-width: 150px;" name="#{m.nom_img_modele}" alt="#{m.nom_modele}">
+
+                                                        </h:graphicImage>
+                                                    </center>
+                                                    <!--<center><p class="label label-default">#{m.nom_modele}</p></center>-->
+
+
+                                                    <center><h:commandButton class="btn3d btn btn-info" action="#{premierBean.toSousModele()}" value="#{m.nom_modele}">
+                                                            <f:param name="modele" value="#{m.nom_modele}" />
+                                                            <f:param name="idmodele" value="#{m.id_ref_modele}" />
+                                                            <f:param name="urlimage" value="#{m.nom_img_modele}" />
+                                                        </h:commandButton></center>
+                                                </div>
+
+                                            </ui:repeat>
+                                        </h:form>
+                                    </div>
                                 </div>
                             </div>
-                            <legend/>
-                            <div class="row">
-                                <h:form id="form-marque-affiche">
-                                    <ui:repeat var="m" value="#{beanChargeListModele.ref_modele}">
-                                        <div class="col-md-2 col-sm-3 col-xs-6 pull-center">
-                                            <center>
-                                                <h:graphicImage library="images" class="img-rsponsive" style="max-height: 150px;padding: 15px;max-width: 150px;" name="#{m.nom_img_modele}" alt="#{m.nom_modele}">
-                                                   
-                                                </h:graphicImage>
-                                            </center>
-                                            <!--<center><p class="label label-default">#{m.nom_modele}</p></center>-->
-
-
-                                            <center><h:commandButton class="btn3d btn btn-info" action="#{premierBean.toSousModele()}" value="#{m.nom_modele}">
-                                                    <f:param name="modele" value="#{m.nom_modele}" />
-                                                    <f:param name="idmodele" value="#{m.id_ref_modele}" />
-                                                     <f:param name="urlimage" value="#{m.nom_img_modele}" />
-                                                </h:commandButton></center>
-                                        </div>
-
-                                    </ui:repeat>
-                                </h:form>
-                            </div>
+                        </div>
+                        <div class="row">
+                            <ui:insert name="module-recherche-inline" >
+                                <ui:include src="../../resources/template/fragment/commun/composants/module-recherche-inline.xhtml" />
+                            </ui:insert>
                         </div>
                     </div>
                 </div>
