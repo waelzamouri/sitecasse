@@ -8,8 +8,18 @@ and open the template in the editor.
     Author     : wael
 */
 
+
 body{
-    background: url(../../resources/images/ciel.jpg)
+    background-image: url(../../resources/images/mod-arriere.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+
+}
+.arrieresite{
+    background-image: url(../../resources/images/mod-arriere.png);
+    background-repeat:repeat-y;
+    background-position:center center;
+
 }
 
 /* Boutton 3D effet */

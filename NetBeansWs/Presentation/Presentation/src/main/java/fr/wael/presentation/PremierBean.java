@@ -142,14 +142,12 @@ public class PremierBean implements Serializable {
     }
 
     public String toRecherche() {
-
         this.id_modele = String.valueOf(imRef_Sous_Modele.getIdModelByName(f_modele));
-
         return "rech";
     }
 
     public String toModele() {
-        Map<String, String> params
+        final Map<String, String> params
                 = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         f_marque = params.get("marque");
         id_marque = params.get("idmarque");
@@ -183,21 +181,36 @@ public class PremierBean implements Serializable {
         if (nom_sous_modele == null) {
             nom_sous_modele = "---";
         }
-     
-            return "zone";
-      
+
+        return "zone";
+
     }
+
     public String toPieceChoix() {
-         final Map<String, String> params
+        final Map<String, String> params
                 = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-         id_ref_zone = params.get("idzone");
-         nom_zone = params.get("nomzone");
-         
+        id_ref_zone = params.get("idzone");
+        nom_zone = params.get("nomzone");
+
         return "piece-choix";
     }
-    public String toChoixInsCon(){
+
+    public String toChoixInsCon() {
+        final Map<String, String> params
+                = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+        f_nom_piece = params.get("nompiece");
+        id_piece = params.get("idpiece");
         return "choix-con-ins";
     }
- 
+    public String toSenregister(){
+        return "senregistrer";
+    }
+
+    private boolean verifieAllOk() {
+        if (f_marque != null && f_modele != null && f_nom_piece != null) {
+            return true;
+        }
+        return false;
+    }
 
 }

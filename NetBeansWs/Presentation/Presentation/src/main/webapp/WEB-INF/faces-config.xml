@@ -115,5 +115,14 @@
             <redirect />
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/pages/accueil/choix-conn-ins.xhtml</from-view-id>
+        <navigation-case>
+           
+            <from-outcome>senregistrer</from-outcome>
+            <to-view-id>/pages/accueil/senregistrer.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
     
 </faces-config>

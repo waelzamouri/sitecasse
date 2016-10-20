@@ -56,6 +56,10 @@
         <pattern value="/deconnecter" />
         <view-id value="/faces/pages/accueil/deconnexion.xhtml"/>
     </url-mapping>
+    <url-mapping id="senregistrer">
+        <pattern value="/s-enregistrer" />
+        <view-id value="/faces/pages/accueil/senregistrer.xhtml"/>
+    </url-mapping>
 
 
 </pretty-config>

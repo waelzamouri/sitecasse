@@ -30,12 +30,14 @@
                             <div class="well">
                                 <div class="box">
                                     <center>
-                                       
+
 
                                         <h:graphicImage library="images" name="#{premierBean.url_modele_img}" class="img-rsponsive" style="max-height: 130px;padding: 15px;"/><br />
                                         <strong>Marque : </strong><p class="bg-info">#{premierBean.f_marque}</p>
                                         <strong>Modèle : </strong><p class="bg-info">#{premierBean.f_modele}</p>
-                                        
+                                        <c:if test="#{not empty premierBean.nom_sous_modele}">
+                                            <strong>Détails modèle : </strong><p class="bg-info">#{premierBean.nom_sous_modele}</p>
+                                        </c:if>
                                     </center>
                                 </div>
                             </div>
