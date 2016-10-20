@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="mdp">Mot de passe</label>
-                                        <h:inputSecret class="form-control" id="mdp" alt="mot de passe" value="#{beanSenregistrer.mdp}" aria-describedby="passwordHelpBlock">
+                                        <h:inputSecret class="form-control" id="mdp" alt="mot de passe" value="#{beanSenregistrer.mdp}" >
                                             <p id="passwordHelpBlock" class="form-text text-muted">
                                                 Votre mot de pase doit contenir au moin un chiffre et une léttre
                                             </p>
@@ -56,7 +56,7 @@
                                     </div>
                                     <br/>
                                     <center>
-                                        <h:commandLink value="✓ Valider" class="btn3d btn-success btn-lg" />
+                                        <h:commandLink value="✓ Valider" class="btn3d btn-success btn-lg" action="#{beanSenregistrer.enregistrer()}"/>
                                     </center>
                                     <br />
                                 </h:form>

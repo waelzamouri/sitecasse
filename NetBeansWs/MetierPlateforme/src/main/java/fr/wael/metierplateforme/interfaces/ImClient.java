@@ -13,4 +13,5 @@ import fr.wael.model.Client;
  */
 public interface ImClient {
     public Client verifConnection(String mail, String psw);
+    public void addClient(Client client);
 }

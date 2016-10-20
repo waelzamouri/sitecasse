@@ -5,8 +5,12 @@
  */
 package fr.wael.presentation;
 
+import fr.wael.dao.imp.DaoClient;
+import fr.wael.dao.interfaces.IDaoClient;
+import fr.wael.model.Client;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 
@@ -16,18 +20,22 @@ import javax.faces.bean.RequestScoped;
  */
 @ManagedBean
 @RequestScoped
-public class BeanSenregistrer implements Serializable {
+public class BeanSenregistrer extends Connexion implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    //private IDaoClient iDaoClient;
     private String nom;
     private String prenom;
     private String mail;
     private String num_tel;
     private String mdp;
     
+
+    
     public BeanSenregistrer() {
     }
+
+    
 
     public String getNom() {
         return nom;
@@ -72,7 +80,22 @@ public class BeanSenregistrer implements Serializable {
     public String enregistrer(){
         if(verifAll()){
             
+           // iDaoClient = new DaoClient();
+            Client client = new Client();
+            client.setNom(nom);
+            client.setPrenom(prenom);
+            client.setMail(mail);
+            client.setNumero(num_tel);
+            client.setPsw(mdp);
+            super.imClient.addClient(client);
+            super.connected = true;
+            super.nom = this.nom;
+            super.prenom = this.prenom;
+            //iDaoClient.addClient(client);
+            
+            return "my-commande";
         }
+        return "enrg-ko";
     }
     
     private boolean verifAll(){

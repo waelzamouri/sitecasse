@@ -11,6 +11,7 @@ import fr.wael.metierplateforme.interfaces.ImClient;
 import fr.wael.model.Client;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 /**
@@ -21,18 +22,18 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class Connexion implements Serializable {
 
-    private ImClient imClient;
+    protected ImClient imClient;
     private static final long serialVersionUID = 1L;
     private Client client;
     private String mail;
     private String psw;
-    private boolean connected;
-    private String nom;
-    private String prenom;
+    protected boolean connected;  
+    protected String nom;
+    protected String prenom;
 
     public Connexion() {
         imClient = new MClient();
-        connected = false;
+//        connected = false;
     }
 
     public String getNom() {
