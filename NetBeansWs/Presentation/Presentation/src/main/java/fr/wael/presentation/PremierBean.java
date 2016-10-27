@@ -152,6 +152,7 @@ public class PremierBean implements Serializable {
         f_marque = params.get("marque");
         id_marque = params.get("idmarque");
         url_marque_img = params.get("urlmarque");
+        f_nom_piece = "";
         //System.out.println(url_marque_img);
         return "model-list";
     }

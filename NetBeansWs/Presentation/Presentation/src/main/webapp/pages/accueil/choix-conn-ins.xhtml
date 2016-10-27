@@ -18,9 +18,16 @@
                 <!--<script type="text/javascript" src="../../resources/js/style.js" ></script>-->
                 <h:outputStylesheet library="css" name="style.css" />
                 <h:outputScript library="js" name="style.js" />
-               
+                <h:outputScript library="js" name="controle.js" />
+                <c:if test="#{connexion.connected}">
+                    <meta http-equiv="refresh" content="0; URL=ma-commande" />
+                </c:if>
 
                 <!--                à définir-->
+<!--                <ui:insert name="modal-senregistrer" >
+                    <ui:include src="../modal/modal-connexion.xhtml" />
+                </ui:insert>-->
+                <ui:include src= "../modal/modal-connexion.xhtml" />
                 <div class="container">
                     <div class="row">
 
@@ -28,12 +35,12 @@
                             <div class="well">
                                 <div class="box">
 
-                                    <h:form class="form-horizontal" role="form" id="form-con">
+                                    <h:form class="form-horizontal" role="form" id="form-con" onsubmit="return controleCon();">
 
                                         <center><h3><span class="label label-default">Connectez vous à votre session</span></h3></center>
                                         <div class="form-group">
                                             <label for="mail">mail:</label>
-                                            <h:inputText class="form-control" id="mail" alt="Mail" value="#{connexion.mail}">
+                                            <h:inputText class="form-control" id="mail" alt="Mail" value="#{connexion.mail}" >
 
                                             </h:inputText>
 
@@ -46,14 +53,14 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="mdp">Mot de passe :</label>
-                                            
-                                            <h:inputSecret value="#{connexion.psw}" id="mdp" class="form-control" />
+
+                                            <h:inputSecret value="#{connexion.psw}" id="mdp" class="form-control"  />
                                         </div>
 
                                         <center>
                                             <!--<button type="submit" class="btn3d btn btn-danger">Trouver  <span class="glyphicon glyphicon glyphicon-eye-open"></span></button></center>-->
 
-                                            <h:commandLink  class="btn3d btn btn-warning" action="#{connexion.toTryConnect()}">Connexion   <h:outputText class="glyphicon glyphicon glyphicon-eye-open" /></h:commandLink></center>
+                                            <h:commandLink  class="btn3d btn btn-warning" action="#{connexion.toTryConnect()}" >Connexion   <h:outputText class="glyphicon glyphicon glyphicon-eye-open" /></h:commandLink></center>
                                         <!--<h:link outcome="rech" value="Trouver"  class="btn3d btn btn-danger"></h:link></center>-->
 
                                     </h:form>

@@ -18,7 +18,8 @@
                 <!--<script type="text/javascript" src="../../resources/js/style.js" ></script>-->
                 <h:outputStylesheet library="css" name="style.css" />
                 <h:outputScript library="js" name="style.js" />
-
+                <h:outputScript library="js" name="controle.js" />
+                <ui:include src= "../modal/modal-inscription.xhtml" />
 
                 <!--                à définir-->
                 <div class="container">
@@ -29,18 +30,18 @@
                                     <h3> S'enregister</h3>
                                 </center>
                                 <legend />
-                                <h:form id="form-enregistrer" class="form-horizontal" role="form">
+                                <h:form id="form-enregistrer" class="form-horizontal" role="form" onsubmit="return controleEnrg()">
                                     <div class="form-group">
                                         <label for="nom">Nom</label>
-                                        <h:inputText class="form-control" id="nom" alt="nom" value="#{beanSenregistrer.nom}" />
+                                        <h:inputText class="form-control" id="nom" alt="nom" value="#{connexion.nom_en}" />
                                     </div>
                                     <div class="form-group">
                                         <label for="prenom">Prenom</label>
-                                        <h:inputText class="form-control" id="prenom" alt="prenom" value="#{beanSenregistrer.prenom}" />
+                                        <h:inputText class="form-control" id="prenom" alt="prenom" value="#{connexion.prenom_en}" />
                                     </div>
                                     <div class="form-group">
                                         <label for="mdp">Mot de passe</label>
-                                        <h:inputSecret class="form-control" id="mdp" alt="mot de passe" value="#{beanSenregistrer.mdp}" >
+                                        <h:inputSecret class="form-control" id="mdp" alt="mot de passe" value="#{connexion.psw_en}" >
                                             <p id="passwordHelpBlock" class="form-text text-muted">
                                                 Votre mot de pase doit contenir au moin un chiffre et une léttre
                                             </p>
@@ -48,15 +49,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="numero">Numero de téléphne</label>
-                                        <h:inputText class="form-control" id="numero" alt="numero de téléphone" value="#{beanSenregistrer.num_tel}" />
+                                        <h:inputText class="form-control" id="numero" alt="numero de téléphone" value="#{connexion.num_tel_en}" />
                                     </div>
                                     <div class="form-group">
                                         <label for="mail">Mail</label>
-                                        <h:inputText class="form-control" id="mail" alt="Mail" value="#{beanSenregistrer.mail}"/>
+                                        <h:inputText class="form-control" id="mail" alt="Mail" value="#{connexion.mail_en}"/>
                                     </div>
                                     <br/>
                                     <center>
-                                        <h:commandLink value="✓ Valider" class="btn3d btn-success btn-lg" action="#{beanSenregistrer.enregistrer()}"/>
+                                        <h:commandLink value="✓ Valider" class="btn3d btn-success btn-lg" action="#{connexion.enregistrer()}"/>
                                     </center>
                                     <br />
                                 </h:form>
