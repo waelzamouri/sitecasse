@@ -11,7 +11,7 @@ and open the template in the editor.
 
 body{
     background-image: url(../../resources/images/mod-arriere.png);
-    background-repeat:no-repeat;
+    background-repeat:repeat-y;
     background-position:center center;
 
 }
@@ -252,3 +252,4 @@ body{
     -moz-border-radius: 0px;
     background-image: none;
 }
+
