@@ -133,5 +133,14 @@
             <redirect />
         </navigation-case>
     </navigation-rule>
+    <!--Régle générale-->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>my-commande</from-outcome>
+            <to-view-id>/pages/accueil/my-commande.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
     
 </faces-config>

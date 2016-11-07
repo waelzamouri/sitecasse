@@ -9,7 +9,7 @@
         <ui:composition>
 
             <nav class="navbar navbar-default">
-
+                <ui:include src="/pages/modal/modal-header-connexion.xhtml" />
                 <div class="container">
                     <!--                    <div class="row">
                                             <div class="col-md-3 col-xs-3">
@@ -62,13 +62,13 @@
                     <div class="collapse navbar-collapse" id="navbar-collapse-2">
                         <c:if test="#{!connexion.connected}">
 
-                            <h:form id="bardroit" class="pull-right">
+                            <h:form id="bardroit" class="pull-right" onsubmit="return false;">
                                 <h:commandLink  class="btn3d btn btn-default btn-sm" value="Marques" />
                                 <h:commandLink  class="btn3d btn btn-default btn-sm" value="Modeles" />
                                 <ul class="nav navbar-nav navbar-right" style="padding-left: 10px;">
 
                                     <li>                 
-                                        <center><button type="button" class="btn3d btn btn-info btn-sm " ><span class="glyphicon glyphicon-user"></span>  Connexion   </button></center>
+                                        <center><h:commandLink class="btn3d btn btn-info btn-sm " onclick="modalShowConn()" ><span class="glyphicon glyphicon-user"></span>  Connexion   </h:commandLink></center>
                                         <center> <a href="#" style="font-size: 80%;">Ouvrir un compte  ? </a></center>       </li>
                                 </ul>
                             </h:form>

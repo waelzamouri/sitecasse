@@ -36,16 +36,15 @@ $(document).ready(function () {
         var availableTags = [
             "Renault", "Citroen", "Ford", "Peugeot", "Mercedes", "BMW",
             "Audi", "Nissan", "Seat", "Volkswagen", "Fiat", "Alfa Rome",
-            "Hyundai", "Suzuki", "Rover", "Mitsubishi","Abarth","Ac","Acrea",
-            "Acura","Aixam","Alpina","Alpine","Amc","Aro","Asia","Aston Martin",
-            "Austin","Austin Healy","Autobianchi","Auverland","Bedford","Bellier",
-            "Bentley","Bertone","Bugati","Buick","Cadillac","Carver","Caterham","Chatenet",
-            "Chevrolet","Chrysler","Corvette","Dacia","Daewoo","Daf","Daihatsu","Daimler",
-            "Dallas","Dangel","Datsun","De la Chapelle","Delahaye","DKW/Auto Union","Dodge",
-            "Excalibur","Facel Vega","Ferrari","Ford USA","FSO","Galloper","GMC","GME","Grecav",
-            "Hommel","Honda","Infiniti","ISUZU","Iveco","Jaguar","Kia","Lancia","Land Rover",
-            "Lexus","Lotus","Mazda","MG","Mini","Porche","SAAB","Skoda","Smart","Subaru","Volvo",
-            
+            "Hyundai", "Suzuki", "Rover", "Mitsubishi", "Abarth", "Ac", "Acrea",
+            "Acura", "Aixam", "Alpina", "Alpine", "Amc", "Aro", "Asia", "Aston Martin",
+            "Austin", "Austin Healy", "Autobianchi", "Auverland", "Bedford", "Bellier",
+            "Bentley", "Bertone", "Bugati", "Buick", "Cadillac", "Carver", "Caterham", "Chatenet",
+            "Chevrolet", "Chrysler", "Corvette", "Dacia", "Daewoo", "Daf", "Daihatsu", "Daimler",
+            "Dallas", "Dangel", "Datsun", "De la Chapelle", "Delahaye", "DKW/Auto Union", "Dodge",
+            "Excalibur", "Facel Vega", "Ferrari", "Ford USA", "FSO", "Galloper", "GMC", "GME", "Grecav",
+            "Hommel", "Honda", "Infiniti", "ISUZU", "Iveco", "Jaguar", "Kia", "Lancia", "Land Rover",
+            "Lexus", "Lotus", "Mazda", "MG", "Mini", "Porche", "SAAB", "Skoda", "Smart", "Subaru", "Volvo",
         ];
         $("#form-rech\\:marque").autocomplete({
             source: availableTags
@@ -211,3 +210,8 @@ $(document).ready(function () {
 
 });
 
+//Affiche modale connexion pour header
+function modalShowConn() {
+    $('#modal-header-conn').modal('show');
+return false;
+}
