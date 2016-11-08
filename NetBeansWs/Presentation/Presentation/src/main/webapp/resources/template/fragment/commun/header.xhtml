@@ -52,9 +52,9 @@
                                 
                                                                     <p   class="text-info" href="#" style="margin-left: 30px;font-size: 80%;" ><span class="glyphicon glyphicon-info-sign"></span>   Jusqu'à <span class="badge">5</span> devis pour votre pièce</p>
                                                                 </div>-->
-                                
+
                                 <h:graphicImage library="images" name="logo-test_1.png"  style="max-width : 220px;margin-left: 10px;padding-top: 1px;" class="img-responsive"/>
-                               
+
                             </div> 
 
                         </div>
@@ -63,13 +63,39 @@
                         <c:if test="#{!connexion.connected}">
 
                             <h:form id="bardroit" class="pull-right" onsubmit="return false;">
-                                <h:commandLink  class="btn3d btn btn-default btn-sm" value="Marques" />
-                                <h:commandLink  class="btn3d btn btn-default btn-sm" value="Modeles" />
-                                <ul class="nav navbar-nav navbar-right" style="padding-left: 10px;">
 
-                                    <li>                 
+                                <!--<h:commandLink  class="btn3d btn btn-default btn-sm" value="Modeles" />-->
+                                <ul class="nav navbar-nav navbar-right" style="padding-left: 10px;">
+                                    <li><center><div class="dropdown">
+                                                <a  type="button" id="dropdownMenu1" class="btn3d btn btn-default btn-sm dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    Panier <span class="glyphicon glyphicon-shopping-cart"></span>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <center>
+                                                        <c:if test="#{not empty premierBean.f_marque}" >
+                                                            <h4 class="bg-success">Demande en cours :</h4>
+                                                            <h:graphicImage library="images" name="#{premierBean.url_modele_img}" class="img-rsponsive" style="max-height: 130px;padding: 15px;"/><br />
+                                                            <strong>Marque : </strong><p class="bg-warning">#{premierBean.f_marque}</p>
+                                                            <strong>Modèle : </strong><p class="bg-warning">#{premierBean.f_modele}</p>
+                                                            <c:if test="#{not empty premierBean.f_nom_piece}">
+                                                                <strong>Pièce recherchée : </strong><p class="bg-warning">#{premierBean.f_nom_piece}</p>
+                                                            </c:if>
+                                                            <c:if test="#{not empty premierBean.nom_sous_modele}">
+                                                                <strong>Détails modèle : </strong><p class="bg-warning">#{premierBean.nom_sous_modele}</p>
+                                                            </c:if>
+                                                        </c:if>
+                                                        <c:if test="#{empty premierBean.f_marque}" >
+                                                            <center><h4 class="bg-danger">Aucune demande en cours</h4></center>
+                                                        </c:if>
+                                                    </center>
+
+                                                </ul>
+                                            </div></center></li>
+                                    <li> 
+
                                         <center><h:commandLink class="btn3d btn btn-info btn-sm " onclick="modalShowConn()" ><span class="glyphicon glyphicon-user"></span>  Connexion   </h:commandLink></center>
-                                        <center> <a href="#" style="font-size: 80%;">Ouvrir un compte  ? </a></center>       </li>
+                                        <center> <a href="#" style="font-size: 80%;">Ouvrir un compte  ? </a></center>       
+                                    </li>
                                 </ul>
                             </h:form>
                         </c:if>
