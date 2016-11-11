@@ -9,6 +9,7 @@
         <view-id value="/faces/pages/accueil/affiche-sous-modele.xhtml" />
         <query-param name="modele">#{premierBean.f_modele}</query-param>
         <query-param name="marque">#{premierBean.f_marque}</query-param>
+        
         <!--<action>#{premierBean.toRecherche()}</action>-->
     </url-mapping>
    

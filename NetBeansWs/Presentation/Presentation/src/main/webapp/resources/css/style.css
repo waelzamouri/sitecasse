@@ -10,15 +10,17 @@ and open the template in the editor.
 
 
 body{
-    background-image: url(../../resources/images/mod-arriere.png);
-    background-repeat:repeat-y;
-    background-position:center center;
+    background-image: url(../../resources/images/fond_casse_compar_VF.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    
 
 }
 .arrieresite{
-    background-image: url(../../resources/images/mod-arriere.png);
-    background-repeat:repeat-y;
-    background-position:center center;
+    background-image: url(../../resources/images/fond_casse_compar_VF.jpg);
+    background-repeat:no-repeat;
+    background-position: inherit;
+    
 
 }
 

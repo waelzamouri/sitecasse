@@ -68,26 +68,12 @@
                                 <ul class="nav navbar-nav navbar-right" style="padding-left: 10px;">
                                     <li><center><div class="dropdown">
                                                 <a  type="button" id="dropdownMenu1" class="btn3d btn btn-default btn-sm dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    Panier <span class="glyphicon glyphicon-shopping-cart"></span>
+                                                    <span class="glyphicon glyphicon-wrench"></span>  Demande en cours 
                                                 </a>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                                    <center>
-                                                        <c:if test="#{not empty premierBean.f_marque}" >
-                                                            <h4 class="bg-success">Demande en cours :</h4>
-                                                            <h:graphicImage library="images" name="#{premierBean.url_modele_img}" class="img-rsponsive" style="max-height: 130px;padding: 15px;"/><br />
-                                                            <strong>Marque : </strong><p class="bg-warning">#{premierBean.f_marque}</p>
-                                                            <strong>Modèle : </strong><p class="bg-warning">#{premierBean.f_modele}</p>
-                                                            <c:if test="#{not empty premierBean.f_nom_piece}">
-                                                                <strong>Pièce recherchée : </strong><p class="bg-warning">#{premierBean.f_nom_piece}</p>
-                                                            </c:if>
-                                                            <c:if test="#{not empty premierBean.nom_sous_modele}">
-                                                                <strong>Détails modèle : </strong><p class="bg-warning">#{premierBean.nom_sous_modele}</p>
-                                                            </c:if>
-                                                        </c:if>
-                                                        <c:if test="#{empty premierBean.f_marque}" >
-                                                            <center><h4 class="bg-danger">Aucune demande en cours</h4></center>
-                                                        </c:if>
-                                                    </center>
+                                                    <ui:insert name="module-panier" >
+                                                        <ui:include src="composants/module-panier.xhtml" />
+                                                    </ui:insert>
 
                                                 </ul>
                                             </div></center></li>
@@ -105,16 +91,31 @@
 
                                     <center>
 
-                                        <h:commandLink class="btn btn3d btn-default btn-sm">
-                                            <span class="glyphicon glyphicon-user"> #{connexion.prenom} </span>
-                                        </h:commandLink>
-                                        <h:commandLink class="btn btn3d btn-info btn-sm" >
-                                            <span class="glyphicon glyphicon-list-alt"> Mes demandes</span>
-                                        </h:commandLink>
+                                        <div class="dropdown">
 
-                                        <h:commandLink class="btn btn3d btn-danger btn-sm" action="#{connexion.deconncter()}">
-                                            <span class="glyphicon glyphicon-off"> Déconnecter</span>
-                                        </h:commandLink>
+                                            <h:commandLink class="btn btn-warning">
+                                                <span class="glyphicon glyphicon-user"> #{connexion.prenom} </span>
+                                            </h:commandLink>
+
+                                            <a  type="button" id="dropdownMenu1" class="btn3d btn btn-default btn-sm dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span class="glyphicon glyphicon-wrench"></span>  Demande en cours  
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                
+                                                        <ui:insert name="module-panier" >
+                                                            <ui:include src="composants/module-panier.xhtml" />
+                                                        </ui:insert>
+                                                 
+                                            </ul>
+
+                                            <!--                                        <h:commandLink class="btn btn3d btn-info btn-sm" >
+                                                                                        <span class="glyphicon glyphicon-list-alt"> Mes demandes</span>
+                                                                                    </h:commandLink>-->
+
+                                            <h:commandLink class="btn btn3d btn-danger btn-sm" action="#{connexion.deconncter()}">
+                                                <span class="glyphicon glyphicon-off"> Déconnecter</span>
+                                            </h:commandLink>
+                                        </div>
                                     </center>
                                 </h:form>
                             </div>

@@ -7,11 +7,16 @@ package fr.wael.presentation;
 
 import fr.wael.metierplateforme.implemntation.MClient;
 import fr.wael.metierplateforme.interfaces.ImClient;
+import fr.wael.metierplateforme.mail.EnvoieMail;
 import fr.wael.model.Client;
+import fr.wael.presentation.util.SyngletonContextSpring;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -20,6 +25,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class Connexion implements Serializable {
+
 
     private ImClient imClient;
     private static final long serialVersionUID = 1L;
@@ -41,6 +47,8 @@ public class Connexion implements Serializable {
         imClient = new MClient();
 //        connected = false;
     }
+
+  
 
     public String getNom_en() {
         return nom_en;
@@ -161,6 +169,8 @@ public class Connexion implements Serializable {
             connected = true;
             nom = nom_en;
             prenom = prenom_en;
+            EnvoieMail em = (EnvoieMail) SyngletonContextSpring.getInstance().getBean("envoieMail");
+            em.envoyer(mail_en);
             return "my-commande";
         }
         return "KO";
