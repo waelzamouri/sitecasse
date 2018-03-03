@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <f:facet name="first">
+
+
+        </f:facet>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css" />
+                <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css" />
+                <link rel="stylesheet" type="text/css" href="../../../css/scrolling-nav.css" />
+                <script type="text/javascript" src="../../../js/bootstrap.js" ></script>
+                <script type="text/javascript" src="../../../js/bootstrap.min.js" ></script>
+                <script type="text/javascript" src="../../../js/jquery.easing.min.js" ></script>
+                <script type="text/javascript" src="../../../js/jquery.js" ></script>
+                <script type="text/javascript" src="../../../js/scrolling-nav.js" ></script>-->
+        <!--<link rel="stylesheet"  href="../../../css/bootstrap.min.css" />-->
+
+        
+        
+
+    </h:head>
+    <h:body>
+        <header id="header">
+            <ui:insert name="header" >
+
+                <ui:include src="../../fragment/commun/header.xhtml" />
+            </ui:insert>
+
+        </header>
+        <div id="content">
+            <ui:insert name="content">
+                <ui:include src="../../fragment/common/content.xhtml" />
+            </ui:insert>
+        </div>
+        <div id="footer">
+            <ui:insert name="footer">
+                <ui:include src="../../fragment/commun/footer.xhtml" />
+            </ui:insert>
+        </div>
+        <div id="module-scroll-top">
+            <ui:insert name="footer">
+                <ui:include src="../../fragment/commun/composants/module-scroll-top.xhtml" />
+            </ui:insert>
+        </div>
+    </h:body>
+</html>

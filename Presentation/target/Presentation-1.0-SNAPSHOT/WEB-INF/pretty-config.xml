@@ -1,0 +1,67 @@
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.3.2" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.2
+                                   		http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.2.xsd">
+
+
+ 
+    <url-mapping id="sous-modele">
+        <pattern value="/sous-modele-list" />
+        <view-id value="/faces/pages/accueil/affiche-sous-modele.xhtml" />
+        <query-param name="modele">#{premierBean.f_modele}</query-param>
+        <query-param name="marque">#{premierBean.f_marque}</query-param>
+        
+        <!--<action>#{premierBean.toRecherche()}</action>-->
+    </url-mapping>
+   
+    <url-mapping id="rech">
+        <pattern value="/recherche" />
+        <view-id value="/faces/pages/accueil/affiche-sous-modele.xhtml" />
+        
+        <!--<action>#{premierBean.toRecherche()}</action>-->
+    </url-mapping>
+    <url-mapping id="affiche-marque">
+        <pattern value="/liste-des-marque-vehicule" />
+        <view-id value="/faces/pages/accueil/affiche-marque.xhtml" />
+        
+        <!--<action>#{premierBean.toRecherche()}</action>-->
+    </url-mapping>
+    <url-mapping id="model-list">
+        <pattern value="/liste-de-modeles" />
+        <view-id value="/faces/pages/accueil/modele-list.xhtml" />
+        <query-param name="marque">#{premierBean.f_marque}</query-param>
+        <!--<action>#{premierBean.toRecherche()}</action>-->
+    </url-mapping>
+ 
+    <url-mapping id="home">
+        <pattern value="/home" />
+        <view-id value="/faces/index.xhtml"/>
+    </url-mapping>
+    <url-mapping id="zone">
+        <pattern value="/zone-liste" />
+        <view-id value="/faces/pages/accueil/zone-list.xhtml"/>
+        <query-param name="urlimage">#{premierBean.url_modele_img}</query-param>
+    </url-mapping>
+    <url-mapping id="piece-choix">
+        <pattern value="/choix-de-la-piece" />
+        <view-id value="/faces/pages/accueil/affiche-pieces.xhtml"/>
+    </url-mapping>
+    <url-mapping id="choix-con-ins">
+        <pattern value="/inscription-ou-connexion" />
+        <view-id value="/faces/pages/accueil/choix-conn-ins.xhtml"/>
+    </url-mapping>
+    <url-mapping id="my-commande">
+        <pattern value="/ma-commande" />
+        <view-id value="/faces/pages/accueil/my-commande.xhtml"/>
+    </url-mapping>
+    <url-mapping id="deconnexion">
+        <pattern value="/deconnecter" />
+        <view-id value="/faces/pages/accueil/deconnexion.xhtml"/>
+    </url-mapping>
+    <url-mapping id="senregistrer">
+        <pattern value="/s-enregistrer" />
+        <view-id value="/faces/pages/accueil/senregistrer.xhtml"/>
+    </url-mapping>
+
+
+</pretty-config>

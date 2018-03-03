@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      >
+    <body>
+
+        <ui:composition>
+
+            <nav class="navbar navbar-default">
+                <ui:include src="/pages/modal/modal-header-connexion.xhtml" />
+                <div class="container">
+                    <!--                    <div class="row">
+                                            <div class="col-md-3 col-xs-3">
+                    
+                                                                    <code><h3>Casse compare</h3></code>
+                                                <center><img class="img-rsponsive" src="resources/images/logo-test.png" style="width: inherit;height: inherit;"/></center>
+                                                <center><h:graphicImage library="images" name="logo-test.png" /></center>
+                                            </div>
+                                            <div class="col-md-6 col-xs-9 pull-left">
+                                                <div style="width: inherit;height: inherit">
+                                                    <h2 ><span class="label label-warning" >  Comparateur de pieces détachés pour auto   </span></h2>
+                                                    <p class="text-info" href="#" style="margin-left: 10px"><span class="glyphicon glyphicon-info-sign"></span>   Jusqu'à <span class="badge">5</span> devis pour votre pièce</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-xs-12 pull-right">
+                    
+                                                <center><button type="button" class="btn3d btn btn-info btn-md " ><span class="glyphicon glyphicon-user"></span>  Connexion   </button></center>
+                                                <center> <a href="#">Ouvrir un compte  ? </a></center>
+                                            </div>
+                                        </div>-->
+
+
+
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-left ">
+                            <div class="row">
+
+                                <!--                                <div class="col-md-2 col-xs-2 col-sm-2">
+                                                                    <h:graphicImage library="images" name="logo-test.png"  style="max-width : 70px;max-height: 70px;"/>
+                                                                </div>
+                                                                <div class="col-md-10 col-xs-10 col-sm-10">
+                                                                    <h4 style="margin-left: 30px"><span class="label label-warning" >  Comparateur de pieces détachés pour auto   </span></h4>
+                                
+                                                                    <p   class="text-info" href="#" style="margin-left: 30px;font-size: 80%;" ><span class="glyphicon glyphicon-info-sign"></span>   Jusqu'à <span class="badge">5</span> devis pour votre pièce</p>
+                                                                </div>-->
+
+                                <h:graphicImage library="images" name="logo-test_1.png"  style="max-width : 220px;margin-left: 10px;padding-top: 1px;" class="img-responsive"/>
+
+                            </div> 
+
+                        </div>
+                    </div> 
+                    <div class="collapse navbar-collapse" id="navbar-collapse-2">
+                        <c:if test="#{!connexion.connected}">
+
+                            <h:form id="bardroit" class="pull-right" onsubmit="return false;">
+
+                                <!--<h:commandLink  class="btn3d btn btn-default btn-sm" value="Modeles" />-->
+                                <ul class="nav navbar-nav navbar-right" style="padding-left: 10px;">
+                                    <li><center><div class="dropdown">
+                                                <a  type="button" id="dropdownMenu1" class="btn3d btn btn-default btn-sm dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    <span class="glyphicon glyphicon-wrench"></span>  Demande en cours 
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <ui:insert name="module-panier" >
+                                                        <ui:include src="composants/module-panier.xhtml" />
+                                                    </ui:insert>
+
+                                                </ul>
+                                            </div></center></li>
+                                    <li> 
+
+                                        <center><h:commandLink class="btn3d btn btn-info btn-sm " onclick="modalShowConn()" ><span class="glyphicon glyphicon-user"></span>  Connexion   </h:commandLink></center>
+                                        <center> <a href="#" style="font-size: 80%;">Ouvrir un compte  ? </a></center>       
+                                    </li>
+                                </ul>
+                            </h:form>
+                        </c:if>
+                        <c:if test="#{connexion.connected}">
+                            <div class="nav navbar-nav navbar-right">
+                                <h:form id="identifiant">
+
+                                    <center>
+
+                                        <div class="dropdown">
+
+                                            <h:commandLink class="btn btn-warning">
+                                                <span class="glyphicon glyphicon-user"> #{connexion.prenom} </span>
+                                            </h:commandLink>
+
+                                            <a  type="button" id="dropdownMenu1" class="btn3d btn btn-default btn-sm dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span class="glyphicon glyphicon-wrench"></span>  Demande en cours  
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                
+                                                        <ui:insert name="module-panier" >
+                                                            <ui:include src="composants/module-panier.xhtml" />
+                                                        </ui:insert>
+                                                 
+                                            </ul>
+
+                                            <!--                                        <h:commandLink class="btn btn3d btn-info btn-sm" >
+                                                                                        <span class="glyphicon glyphicon-list-alt"> Mes demandes</span>
+                                                                                    </h:commandLink>-->
+
+                                            <h:commandLink class="btn btn3d btn-danger btn-sm" action="#{connexion.deconncter()}">
+                                                <span class="glyphicon glyphicon-off"> Déconnecter</span>
+                                            </h:commandLink>
+                                        </div>
+                                    </center>
+                                </h:form>
+                            </div>
+
+                        </c:if>
+                    </div>
+                </div>
+
+            </nav>
+
+        </ui:composition>
+    </body>
+</html>

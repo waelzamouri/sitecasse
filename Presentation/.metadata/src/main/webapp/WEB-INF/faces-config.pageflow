@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15200753057540" configfile="/Presentation/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="743" id="pf15200760594251" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf15200760594252 pf15200760594253 pf15200760594254" inlinks="pf15200760594255" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/accueil/affiche-sous-modele.xhtml" x="770" y="541" id="pf15200760594256" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf15200760594257" inlinks="pf15200760594252 pf15200760594258 pf15200760594259" path="/pages/accueil/affiche-sous-modele.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/accueil/affiche-marque.xhtml" x="338" y="520" id="pf152007605942510" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf152007605942511" inlinks="pf15200760594253" path="/pages/accueil/affiche-marque.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/accueil/modele-list.xhtml" x="554" y="541" id="pf152007605942512" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf15200760594258 pf15200760594259" inlinks="pf15200760594254 pf152007605942511" path="/pages/accueil/modele-list.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/accueil/zone-list.xhtml" x="986" y="420" id="pf152007605942513" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf152007605942514" inlinks="pf15200760594257" path="/pages/accueil/zone-list.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/accueil/affiche-pieces.xhtml" x="1202" y="299" id="pf152007605942515" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf152007605942516" inlinks="pf152007605942514" path="/pages/accueil/affiche-pieces.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/accueil/choix-conn-ins.xhtml" x="1418" y="178" id="pf152007605942517" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf152007605942518 pf152007605942519" inlinks="pf152007605942516" path="/pages/accueil/choix-conn-ins.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/accueil/my-commande.xhtml" x="1634" y="764" id="pf152007605942520" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" outlinks="pf15200760594255" inlinks="pf152007605942518 pf152007605942621 pf152007605942622" path="/pages/accueil/my-commande.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/accueil/senregistrer.xhtml" x="1634" y="178" id="pf152007605942623" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" inlinks="pf152007605942519" path="/pages/accueil/senregistrer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/accueil/senregistrer.xhml" x="1418" y="562" id="pf152007605942624" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf152007605942621" path="/pages/accueil/senregistrer.xhml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="1418" y="967" id="pf152007605942625" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf152007605942622" path="*"/>
+  <links id="pf15200760594252" target="pf15200760594256" source="pf15200760594251" outcome="rech" redirect="true" fromaction="#{premierBean.toRecherche()}"/>
+  <links id="pf15200760594253" target="pf152007605942510" source="pf15200760594251" outcome="affiche-marque" redirect="true" fromaction="#{premierBean.toAfficheMarque()}"/>
+  <links id="pf15200760594254" target="pf152007605942512" source="pf15200760594251" outcome="model-list" redirect="true" fromaction="#{premierBean.toModele()}"/>
+  <links id="pf152007605942511" target="pf152007605942512" source="pf152007605942510" outcome="model-list" redirect="true"/>
+  <links id="pf15200760594258" target="pf15200760594256" source="pf152007605942512" outcome="sous-modele" redirect="true"/>
+  <links id="pf15200760594257" target="pf152007605942513" source="pf15200760594256" outcome="zone" redirect="true"/>
+  <links id="pf152007605942514" target="pf152007605942515" source="pf152007605942513" outcome="piece-choix" redirect="true"/>
+  <links id="pf152007605942516" target="pf152007605942517" source="pf152007605942515" outcome="choix-con-ins" redirect="true"/>
+  <links id="pf152007605942518" target="pf152007605942520" source="pf152007605942517" outcome="my-commande" redirect="true"/>
+  <links id="pf15200760594255" target="pf15200760594251" source="pf152007605942520" outcome="deconnecter" redirect="true"/>
+  <links id="pf15200760594259" target="pf15200760594256" source="pf152007605942512" outcome="rech" redirect="true"/>
+  <links id="pf152007605942519" target="pf152007605942623" source="pf152007605942517" outcome="senregistrer" redirect="true"/>
+  <links id="pf152007605942621" target="pf152007605942520" source="pf152007605942624" outcome="my-commande" redirect="true"/>
+  <links id="pf152007605942622" target="pf152007605942520" source="pf152007605942625" outcome="my-commande" redirect="true"/>
+</pageflow:Pageflow>
